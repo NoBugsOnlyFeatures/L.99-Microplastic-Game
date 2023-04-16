@@ -327,6 +327,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeeab7ca22bf16f4c8146541b2549352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+=======
+  underWaterDrag: 2
+  underwaterAngularDrag: 1
+  swimForce: 150
+>>>>>>> efc8685 (Adjustments to swimming feel, added upper bounds to test collision)
 --- !u!61 &921051920
 BoxCollider2D:
   m_ObjectHideFlags: 0
