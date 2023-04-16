@@ -7,7 +7,7 @@ public class PlayerBehavior : MonoBehaviour
 {
     [SerializeField] float underWaterDrag = 2f;
     [SerializeField] float underwaterAngularDrag = 1f;
-    [SerializeField] float swimForce = 150f;
+    [SerializeField] float swimForce = 300f;
     Rigidbody2D _rb;
     Vector2 swimDirection;
 
