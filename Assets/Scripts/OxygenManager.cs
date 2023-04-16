@@ -16,6 +16,7 @@ public class OxygenManager : MonoBehaviour
     [SerializeField] private float _oxygeDepletionTime = 5.0f; // how often we decrease oxygen
 
     private bool _isAlive = true;
+    private bool _countdownStarted = false;
     [SerializeField] private bool _isBubbleInRange = false;
     [SerializeField] private BubbleManager _currentBubble;
 
@@ -23,6 +24,7 @@ public class OxygenManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(OxygenTick());
+        _countdownStarted = true;
     }
 
     // Update is called once per frame
@@ -37,7 +39,9 @@ public class OxygenManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("Player clicked");
             var deltaOxygen = _currentBubble.BubbleInRange ? 5.0f : -5.0f;
+            Debug.Log(_currentBubble.BubbleInRange ? "Gained Oxygen!" : "Lost Oxygen");
             _currentOxygen += deltaOxygen;
             _currentOxygen = Mathf.Clamp(_currentOxygen, 0, _totalOxygen);
             UpdateOxygenBar();
@@ -56,13 +60,16 @@ public class OxygenManager : MonoBehaviour
         while (_isAlive)
         {
             DepleteOxygen();
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(_oxygeDepletionTime);
         }
     }
 
     private void DepleteOxygen()
     {
-        _currentOxygen -= (_totalOxygen * _depletionRate);
-        UpdateOxygenBar();
+        if (_countdownStarted)
+        {
+            _currentOxygen -= (_totalOxygen * _depletionRate);
+            UpdateOxygenBar();
+        }
     }
 }
