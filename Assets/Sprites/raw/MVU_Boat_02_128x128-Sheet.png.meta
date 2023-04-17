@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MVU_Boat_02_128x128-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 23
+        width: 118
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61de5a6db50d0ea44aa866ffbd2723cb
+      internalID: 1302097210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_128x128-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 23
+        width: 118
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2255c07515dea854a9c3a584fcaa0b3e
+      internalID: 1578780990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_128x128-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 23
+        width: 118
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0509a54ed88007f4abb16d1fb2c3293c
+      internalID: -1461402036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_128x128-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 23
+        width: 118
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d656375af4ec9c48a205a41ad6d23ad
+      internalID: 1248846572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_128x128-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 24
+        width: 118
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76513dfbab6251140ad408ede4fe9ca3
+      internalID: 591888519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_128x128-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 23
+        width: 118
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 728a2c9193e9ee843a7337b7f392595d
+      internalID: -1161843686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_128x128-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 22
+        width: 118
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d677cdb8f1477448171b1985fbc49d
+      internalID: 375924297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_128x128-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 22
+        width: 118
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a0921dd4d8e06541a015f1dc9e9d1cd
+      internalID: -997031768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_128x128-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 22
+        width: 118
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5121fa9a7a8e04c9abe6ce62c606ce
+      internalID: 681423357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_128x128-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 22
+        width: 118
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9178c9c6f46288246b65cadfc1bc8329
+      internalID: 615692600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +324,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MVU_Boat_02_128x128-Sheet_6: 375924297
+      MVU_Boat_02_128x128-Sheet_9: 615692600
+      MVU_Boat_02_128x128-Sheet_2: -1461402036
+      MVU_Boat_02_128x128-Sheet_3: 1248846572
+      MVU_Boat_02_128x128-Sheet_5: -1161843686
+      MVU_Boat_02_128x128-Sheet_4: 591888519
+      MVU_Boat_02_128x128-Sheet_0: 1302097210
+      MVU_Boat_02_128x128-Sheet_1: 1578780990
+      MVU_Boat_02_128x128-Sheet_8: 681423357
+      MVU_Boat_02_128x128-Sheet_7: -997031768
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

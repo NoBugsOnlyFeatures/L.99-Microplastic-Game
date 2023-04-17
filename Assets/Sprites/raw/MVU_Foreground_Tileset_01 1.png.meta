@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fa66fcf50aac2a14a87d8b4f93600069
+guid: 0d7561f736fb10745ad8449b53d5b483
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MVU_Boat_02_Full_128x128-Sheet_0
+      name: MVU_Foreground_Tileset_01 1_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 23
-        width: 118
-        height: 52
+        x: 0
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f19efa54c9f959d4196085d498391639
-      internalID: -446724189
+      spriteID: 16c00195b0ed5a7478774a7e939ad67e
+      internalID: 646260268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MVU_Boat_02_Full_128x128-Sheet_1
+      name: MVU_Foreground_Tileset_01 1_1
       rect:
         serializedVersion: 2
-        x: 132
-        y: 23
-        width: 118
-        height: 52
+        x: 64
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f90531e0c7800b4bb3f8cbbf4191d22
-      internalID: -1358736970
+      spriteID: 95dfebcee6a755643805634481e61ebb
+      internalID: -216893596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MVU_Boat_02_Full_128x128-Sheet_2
+      name: MVU_Foreground_Tileset_01 1_2
       rect:
         serializedVersion: 2
-        x: 260
-        y: 23
-        width: 118
-        height: 52
+        x: 128
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 841d4675b6d08bb4cb87ff42325513dc
-      internalID: -176787524
+      spriteID: 3bd343ceb34e5a64b9d7b26eeb8122fa
+      internalID: 393650629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MVU_Boat_02_Full_128x128-Sheet_3
+      name: MVU_Foreground_Tileset_01 1_3
       rect:
         serializedVersion: 2
-        x: 388
-        y: 23
-        width: 118
-        height: 53
+        x: 192
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa68b6c116b560346a0a5ed19f9f6aab
-      internalID: -1846830731
+      spriteID: 4c34e365199dbec4d9a778b545f7f42f
+      internalID: -1841168040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MVU_Boat_02_Full_128x128-Sheet_4
+      name: MVU_Foreground_Tileset_01 1_4
       rect:
         serializedVersion: 2
-        x: 516
-        y: 24
-        width: 118
-        height: 53
+        x: 0
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31b8b0fa5074ec34ba981a98352558ce
-      internalID: 472409662
+      spriteID: 9297b863c8db22346a378f56f5a21496
+      internalID: 99236824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MVU_Boat_02_Full_128x128-Sheet_5
+      name: MVU_Foreground_Tileset_01 1_5
       rect:
         serializedVersion: 2
-        x: 644
-        y: 23
-        width: 118
-        height: 54
+        x: 64
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1b42b0ea791b254c8938fd8536b3975
-      internalID: 704078618
+      spriteID: 383ed13de78a99a4fb8ad31d089c5256
+      internalID: -364515854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MVU_Boat_02_Full_128x128-Sheet_6
+      name: MVU_Foreground_Tileset_01 1_6
       rect:
         serializedVersion: 2
-        x: 772
-        y: 22
-        width: 118
-        height: 54
+        x: 128
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb1704431434e16439b827e72914642e
-      internalID: 2115824666
+      spriteID: 7bb465ed0b0b4144db1aeb29e104010c
+      internalID: 594935812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MVU_Boat_02_Full_128x128-Sheet_7
+      name: MVU_Foreground_Tileset_01 1_7
       rect:
         serializedVersion: 2
-        x: 900
-        y: 22
-        width: 118
-        height: 53
+        x: 192
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,20 +266,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0a59f6bc56bc34418a75255ff317939
-      internalID: -1907797695
+      spriteID: 06149d79f5fa85144a1367fb3c9a44c4
+      internalID: -94837528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MVU_Boat_02_Full_128x128-Sheet_8
+      name: MVU_Foreground_Tileset_01 1_8
       rect:
         serializedVersion: 2
-        x: 1028
-        y: 22
-        width: 118
-        height: 52
+        x: 0
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,20 +287,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63347da1300d5aa449b7d8d0b49a92fc
-      internalID: 1440059362
+      spriteID: a1295d6b6e5c7c844aa48d0be232ef65
+      internalID: -1964356178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MVU_Boat_02_Full_128x128-Sheet_9
+      name: MVU_Foreground_Tileset_01 1_9
       rect:
         serializedVersion: 2
-        x: 1156
-        y: 22
-        width: 118
-        height: 52
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,8 +308,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a96f9deff90152d4b94beb0165fdd0f1
-      internalID: -1165501156
+      spriteID: f6905a8136075f74f995d4a7f7b30d6f
+      internalID: -316611156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Foreground_Tileset_01 1_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bce64c3de93e414bb30803a56cdaab6
+      internalID: 989758181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Foreground_Tileset_01 1_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa2cb2fef26df2f4a87395e9343488a6
+      internalID: -293051644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Foreground_Tileset_01 1_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 293df2e36870ce94b86fd11c70353e88
+      internalID: 1301293708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Foreground_Tileset_01 1_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b36153303fde64db6c720cce8c2a9a
+      internalID: -1561573142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Foreground_Tileset_01 1_14
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df5b7a721522c074599eee9615921dc0
+      internalID: 668306184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Foreground_Tileset_01 1_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef36538350f7db4b962abceb97c14e2
+      internalID: 1201475756
       vertices: []
       indices: 
       edges: []
@@ -325,16 +451,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MVU_Boat_02_Full_128x128-Sheet_5: 704078618
-      MVU_Boat_02_Full_128x128-Sheet_0: -446724189
-      MVU_Boat_02_Full_128x128-Sheet_6: 2115824666
-      MVU_Boat_02_Full_128x128-Sheet_7: -1907797695
-      MVU_Boat_02_Full_128x128-Sheet_1: -1358736970
-      MVU_Boat_02_Full_128x128-Sheet_9: -1165501156
-      MVU_Boat_02_Full_128x128-Sheet_3: -1846830731
-      MVU_Boat_02_Full_128x128-Sheet_8: 1440059362
-      MVU_Boat_02_Full_128x128-Sheet_4: 472409662
-      MVU_Boat_02_Full_128x128-Sheet_2: -176787524
+      MVU_Foreground_Tileset_01 1_2: 393650629
+      MVU_Foreground_Tileset_01 1_8: -1964356178
+      MVU_Foreground_Tileset_01 1_7: -94837528
+      MVU_Foreground_Tileset_01 1_0: 646260268
+      MVU_Foreground_Tileset_01 1_14: 668306184
+      MVU_Foreground_Tileset_01 1_3: -1841168040
+      MVU_Foreground_Tileset_01 1_12: 1301293708
+      MVU_Foreground_Tileset_01 1_13: -1561573142
+      MVU_Foreground_Tileset_01 1_5: -364515854
+      MVU_Foreground_Tileset_01 1_6: 594935812
+      MVU_Foreground_Tileset_01 1_11: -293051644
+      MVU_Foreground_Tileset_01 1_4: 99236824
+      MVU_Foreground_Tileset_01 1_1: -216893596
+      MVU_Foreground_Tileset_01 1_9: -316611156
+      MVU_Foreground_Tileset_01 1_10: 989758181
+      MVU_Foreground_Tileset_01 1_15: 1201475756
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
