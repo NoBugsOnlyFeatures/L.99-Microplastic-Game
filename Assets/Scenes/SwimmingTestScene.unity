@@ -328,11 +328,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   underWaterDrag: 2
   underwaterAngularDrag: 1
   swimForce: 150
 >>>>>>> efc8685 (Adjustments to swimming feel, added upper bounds to test collision)
+=======
+  underWaterDrag: 2
+  underwaterAngularDrag: 1
+  swimForce: 150
+>>>>>>> aae5e7c7d15216f4829b9f1dc053c99e0485e42d
 --- !u!61 &921051920
 BoxCollider2D:
   m_ObjectHideFlags: 0
