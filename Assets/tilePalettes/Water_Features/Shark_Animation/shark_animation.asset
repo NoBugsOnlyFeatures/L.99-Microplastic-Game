@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: shark_animation
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 1204519297, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: 1348104824, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: -1432103399, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: 1415435839, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: 1464526412, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: -223153538, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: -153073882, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: -1673224623, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: -2051778030, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: -804225938, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: -1583517135, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: -905882114, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: 775385809, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: -881533595, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: -1308224771, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: -150767333, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  - {fileID: 1870694899, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
+  m_MinSpeed: 10
+  m_MaxSpeed: 10
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
