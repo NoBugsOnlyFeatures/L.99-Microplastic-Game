@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: boat_empty
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 1302097210, guid: 6823f5991e96af54f9179e796080689f, type: 3}
+  - {fileID: 1578780990, guid: 6823f5991e96af54f9179e796080689f, type: 3}
+  - {fileID: -1461402036, guid: 6823f5991e96af54f9179e796080689f, type: 3}
+  - {fileID: 1248846572, guid: 6823f5991e96af54f9179e796080689f, type: 3}
+  - {fileID: 591888519, guid: 6823f5991e96af54f9179e796080689f, type: 3}
+  - {fileID: -1161843686, guid: 6823f5991e96af54f9179e796080689f, type: 3}
+  - {fileID: 375924297, guid: 6823f5991e96af54f9179e796080689f, type: 3}
+  - {fileID: -997031768, guid: 6823f5991e96af54f9179e796080689f, type: 3}
+  - {fileID: 681423357, guid: 6823f5991e96af54f9179e796080689f, type: 3}
+  - {fileID: 615692600, guid: 6823f5991e96af54f9179e796080689f, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 1
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
