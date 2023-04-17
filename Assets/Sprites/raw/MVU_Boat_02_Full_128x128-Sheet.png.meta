@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MVU_Boat_02_Full_128x128-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 23
+        width: 118
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f19efa54c9f959d4196085d498391639
+      internalID: -446724189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_Full_128x128-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 23
+        width: 118
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f90531e0c7800b4bb3f8cbbf4191d22
+      internalID: -1358736970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_Full_128x128-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 23
+        width: 118
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 841d4675b6d08bb4cb87ff42325513dc
+      internalID: -176787524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_Full_128x128-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 23
+        width: 118
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa68b6c116b560346a0a5ed19f9f6aab
+      internalID: -1846830731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_Full_128x128-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 24
+        width: 118
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31b8b0fa5074ec34ba981a98352558ce
+      internalID: 472409662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_Full_128x128-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 23
+        width: 118
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b42b0ea791b254c8938fd8536b3975
+      internalID: 704078618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_Full_128x128-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 22
+        width: 118
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb1704431434e16439b827e72914642e
+      internalID: 2115824666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_Full_128x128-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 22
+        width: 118
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0a59f6bc56bc34418a75255ff317939
+      internalID: -1907797695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_Full_128x128-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 22
+        width: 118
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63347da1300d5aa449b7d8d0b49a92fc
+      internalID: 1440059362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_Boat_02_Full_128x128-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 22
+        width: 118
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96f9deff90152d4b94beb0165fdd0f1
+      internalID: -1165501156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +324,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MVU_Boat_02_Full_128x128-Sheet_5: 704078618
+      MVU_Boat_02_Full_128x128-Sheet_0: -446724189
+      MVU_Boat_02_Full_128x128-Sheet_6: 2115824666
+      MVU_Boat_02_Full_128x128-Sheet_7: -1907797695
+      MVU_Boat_02_Full_128x128-Sheet_1: -1358736970
+      MVU_Boat_02_Full_128x128-Sheet_9: -1165501156
+      MVU_Boat_02_Full_128x128-Sheet_3: -1846830731
+      MVU_Boat_02_Full_128x128-Sheet_8: 1440059362
+      MVU_Boat_02_Full_128x128-Sheet_4: 472409662
+      MVU_Boat_02_Full_128x128-Sheet_2: -176787524
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
