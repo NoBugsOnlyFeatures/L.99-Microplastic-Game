@@ -9,10 +9,7 @@ public class PlayerBehavior : MonoBehaviour
     float underwaterAngularDrag = 1f;
     float airDrag = 0f;
     float airAngularDrag = 0.05f;
-    [SerializeField]
-    float floatingPower = 15f;
     float waterHeight = 0f;
-
     Rigidbody2D _rb;
     bool underwater;
     // Start is called before the first frame update
@@ -21,31 +18,81 @@ public class PlayerBehavior : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        float difference = transform.position.y - waterHeight;
+        rotatePlayer();
 
-        if (difference < 0){
-            _rb.AddForceAtPosition(Vector2.up * floatingPower * Mathf.Abs(difference), transform.position, ForceMode2D.Force);
-
-            if(!underwater){
-                underwater = true;
-                SwitchState(underwater);
-            }
-        } else if (underwater){
-            underwater = false;
-            SwitchState(underwater);
-        }
     }
 
-    void SwitchState(bool isUnderwater){
-        if (isUnderwater){
-            _rb.drag = underWaterDrag;
-            _rb.angularDrag = underwaterAngularDrag;
-        } else {
-            _rb.drag = airDrag;
-            _rb.angularDrag = airAngularDrag;
+    void rotatePlayer()
+    {
+        if (Input.GetKey(KeyCode.S))
+        {
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.eulerAngles = new Vector3(
+                    transform.eulerAngles.x,
+                    transform.eulerAngles.y,
+                    225);
+
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                transform.eulerAngles = new Vector3(
+                transform.eulerAngles.x,
+                transform.eulerAngles.y,
+                -45);
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(
+                transform.eulerAngles.x,
+                transform.eulerAngles.y,
+                -90);
+            }
+
+        }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.eulerAngles = new Vector3(
+                transform.eulerAngles.x,
+                transform.eulerAngles.y,
+                135);
+
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                transform.eulerAngles = new Vector3(
+                transform.eulerAngles.x,
+                transform.eulerAngles.y,
+                45);
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(
+                transform.eulerAngles.x,
+                transform.eulerAngles.y,
+                90);
+            }
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.eulerAngles = new Vector3(
+                    transform.eulerAngles.x,
+                    transform.eulerAngles.y,
+                    0);
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                transform.eulerAngles = new Vector3(
+                    transform.eulerAngles.x,
+                    transform.eulerAngles.y,
+                    180);
+            }
         }
     }
 }
