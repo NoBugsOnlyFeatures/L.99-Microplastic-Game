@@ -356,8 +356,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.4008989, g: 0.42547154, b: 0.8584906, a: 1}
+  m_Sprite: {fileID: -2054957692, guid: d1df3d08f3e030d41b36e08851ebf7fb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -376,7 +376,7 @@ Transform:
   m_GameObject: {fileID: 662687284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -394,8 +394,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e763a43dd97e84e54a32d7c75087ae39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circle: {fileID: 0}
-  scaleSize: 3
+  _renderer: {fileID: 662687285}
+  _bubbleSprites:
+  - {fileID: -2054957692, guid: d1df3d08f3e030d41b36e08851ebf7fb, type: 3}
+  - {fileID: 1689105796, guid: d1df3d08f3e030d41b36e08851ebf7fb, type: 3}
+  - {fileID: 1203893331, guid: d1df3d08f3e030d41b36e08851ebf7fb, type: 3}
+  - {fileID: 776375260, guid: d1df3d08f3e030d41b36e08851ebf7fb, type: 3}
+  - {fileID: 1320042740, guid: d1df3d08f3e030d41b36e08851ebf7fb, type: 3}
+  _period: 1
+  _inRange: 0
 --- !u!1 &680214586
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +481,6 @@ MonoBehaviour:
   _currentOxygen: 50
   _depletionRate: 0.1
   _oxygeDepletionTime: 5
-  _isBubbleInRange: 0
   _currentBubble: {fileID: 662687287}
 --- !u!1 &1279671427
 GameObject:

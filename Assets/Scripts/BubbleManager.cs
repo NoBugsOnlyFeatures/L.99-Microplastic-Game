@@ -2,51 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class BubbleManager : MonoBehaviour
 {
     [SerializeField]
     private SpriteRenderer _renderer;
+
     [SerializeField]
-    private float scaleSize = 3.0f; // how many times large the bubble is at its highest
+    private Sprite[] _bubbleSprites;
 
-    private Vector3 originalScale;
-    private float period = 5.0f; // five seconds for a full cycle of small to large
-    private float omega;
+    [SerializeField]
+    private float _period = 1.0f; // five seconds for a full cycle of small to large
+    private int _spriteIndex = 0;
+
+    private float _spriteTimer = 0.0f;
+
+    [SerializeField]
     private bool _inRange = false;
-    private float _rangeThreshold = 0.1f;
-    private Color _initialColor;
 
-    public bool BubbleInRange
+    void Start()
     {
-        get => _inRange;
-        private set => _inRange = value;
-    }
-
-    void Awake()
-    {
-        originalScale = transform.localScale;
-        omega = (2 * Mathf.PI) / period;
-        _renderer = GetComponent<SpriteRenderer>();
-        _initialColor = _renderer.material.color;
+        _spriteTimer = (_period / (_bubbleSprites.Length - 1));
     }
 
     void Update()
     {
-        var updatedScaleFactor = Mathf.Abs(((float)Mathf.Sin(omega * Time.time) * scaleSize));
-        if (scaleSize - updatedScaleFactor <= _rangeThreshold)
-        {
-            BubbleInRange = true;
-            _renderer.material.color = Color.red;
-        }
-        else
-        {
-            BubbleInRange = false;
-            _renderer.material.color = _initialColor;
-        }
+        UpdateSprite();
+        
+        _inRange = _spriteIndex >= _bubbleSprites.Length - 1;
+        _renderer.color = _inRange ? Color.cyan : Color.white;
+    }
 
-        transform.localScale = new Vector3(originalScale.x + updatedScaleFactor,
-            originalScale.y + updatedScaleFactor,
-            originalScale.z + updatedScaleFactor);
+    public bool IsInRange()
+    {
+        return _inRange;
+    }
+
+    private void UpdateSprite()
+    {
+        _spriteTimer -= Time.deltaTime;
+
+        if (_spriteTimer <= 0.0f)
+        {
+            _spriteTimer = (_period / (_bubbleSprites.Length - 1));
+
+            _spriteIndex += 1;
+            if (_spriteIndex > _bubbleSprites.Length - 1)
+            {
+                _spriteIndex = 0;
+            }
+
+            _renderer.sprite = _bubbleSprites[_spriteIndex];
+        }
     }
 }

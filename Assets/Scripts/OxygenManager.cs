@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
 
-[RequireComponent(typeof(BubbleManager))]
 public class OxygenManager : MonoBehaviour
 {
     [SerializeField] private Slider _oxygenBar;
@@ -17,7 +16,7 @@ public class OxygenManager : MonoBehaviour
 
     private bool _isAlive = true;
     private bool _countdownStarted = false;
-    [SerializeField] private bool _isBubbleInRange = false;
+    // [SerializeField] private bool _isBubbleInRange = false;
     [SerializeField] private BubbleManager _currentBubble;
 
     // Start is called before the first frame update
@@ -40,8 +39,8 @@ public class OxygenManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Player clicked");
-            var deltaOxygen = _currentBubble.BubbleInRange ? 5.0f : -5.0f;
-            Debug.Log(_currentBubble.BubbleInRange ? "Gained Oxygen!" : "Lost Oxygen");
+            var deltaOxygen = _currentBubble.IsInRange() ? 5.0f : -5.0f;
+            Debug.Log(_currentBubble.IsInRange() ? "Gained Oxygen!" : "Lost Oxygen");
             _currentOxygen += deltaOxygen;
             _currentOxygen = Mathf.Clamp(_currentOxygen, 0, _totalOxygen);
             UpdateOxygenBar();
