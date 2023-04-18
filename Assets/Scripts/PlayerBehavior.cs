@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerBehavior : MonoBehaviour
@@ -10,6 +11,9 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] float swimForce = 300f;
     Rigidbody2D _rb;
     Vector2 swimDirection;
+    [SerializeField] public uint NumberOfUrchins {get; set;}
+
+    public UnityEvent<PlayerBehavior> OnGetUrchin;
 
     void Start()
     {
@@ -17,6 +21,8 @@ public class PlayerBehavior : MonoBehaviour
 
         _rb.drag = underWaterDrag;
         _rb.angularDrag = underwaterAngularDrag;
+
+        NumberOfUrchins = 0;
     }
 
     void Update()
@@ -45,4 +51,27 @@ public class PlayerBehavior : MonoBehaviour
             swimDirection += Vector2.left;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Urchin" && other.gameObject.activeSelf){
+            GetUrchin();
+            other.gameObject.SetActive(false);
+        }
+
+        if (other.gameObject.tag == "Boat"){
+            DepositUrchin();
+        }
+    }
+
+    public void GetUrchin(){
+        NumberOfUrchins += 1;
+        OnGetUrchin.Invoke(this);
+    }
+
+    public void DepositUrchin(){
+        // Set urchins count in boat
+        NumberOfUrchins = 0;
+    }
+
 }
