@@ -11,9 +11,8 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] float swimForce = 300f;
     Rigidbody2D _rb;
     Vector2 swimDirection;
-    [SerializeField] public uint NumberOfUrchins {get; set;}
-
-    public UnityEvent<PlayerBehavior> OnGetUrchin;
+    [SerializeField] public uint NumberOfUrchinsOnPlayer {get; set;}
+    
 
     void Start()
     {
@@ -22,7 +21,7 @@ public class PlayerBehavior : MonoBehaviour
         _rb.drag = underWaterDrag;
         _rb.angularDrag = underwaterAngularDrag;
 
-        NumberOfUrchins = 0;
+        NumberOfUrchinsOnPlayer = 0;
     }
 
     void Update()
@@ -57,21 +56,24 @@ public class PlayerBehavior : MonoBehaviour
         if (other.gameObject.tag == "Urchin" && other.gameObject.activeSelf){
             GetUrchin();
             other.gameObject.SetActive(false);
-        }
+        } else
 
-        if (other.gameObject.tag == "Boat"){
-            DepositUrchin();
+        if(other.gameObject.tag == "Boat"){
+            Debug.Log("Collided with boat");
+            DepositUrchins(other.gameObject.GetComponent<BoatBehavior>());
         }
     }
 
     public void GetUrchin(){
-        NumberOfUrchins += 1;
-        OnGetUrchin.Invoke(this);
+        NumberOfUrchinsOnPlayer += 1;
+        Debug.Log("Player Urchins: " + NumberOfUrchinsOnPlayer);
     }
 
-    public void DepositUrchin(){
-        // Set urchins count in boat
-        NumberOfUrchins = 0;
+    public void DepositUrchins(BoatBehavior boat){ 
+        var numberOfUrchinsCollected = NumberOfUrchinsOnPlayer;
+        NumberOfUrchinsOnPlayer = 0;
+        Debug.Log("Depositing urchins: " + numberOfUrchinsCollected);
+        boat.DepositUrchins(numberOfUrchinsCollected);
     }
 
 }
