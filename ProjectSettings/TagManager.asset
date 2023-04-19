@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GameManager
   - Urchin
+  - Boat
   layers:
   - Default
   - TransparentFX
