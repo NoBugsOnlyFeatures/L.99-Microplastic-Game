@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -451,22 +451,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MVU_Foreground_Tileset_01 1_2: 393650629
-      MVU_Foreground_Tileset_01 1_8: -1964356178
-      MVU_Foreground_Tileset_01 1_7: -94837528
       MVU_Foreground_Tileset_01 1_0: 646260268
-      MVU_Foreground_Tileset_01 1_14: 668306184
-      MVU_Foreground_Tileset_01 1_3: -1841168040
+      MVU_Foreground_Tileset_01 1_1: -216893596
+      MVU_Foreground_Tileset_01 1_10: 989758181
+      MVU_Foreground_Tileset_01 1_11: -293051644
       MVU_Foreground_Tileset_01 1_12: 1301293708
       MVU_Foreground_Tileset_01 1_13: -1561573142
+      MVU_Foreground_Tileset_01 1_14: 668306184
+      MVU_Foreground_Tileset_01 1_15: 1201475756
+      MVU_Foreground_Tileset_01 1_2: 393650629
+      MVU_Foreground_Tileset_01 1_3: -1841168040
+      MVU_Foreground_Tileset_01 1_4: 99236824
       MVU_Foreground_Tileset_01 1_5: -364515854
       MVU_Foreground_Tileset_01 1_6: 594935812
-      MVU_Foreground_Tileset_01 1_11: -293051644
-      MVU_Foreground_Tileset_01 1_4: 99236824
-      MVU_Foreground_Tileset_01 1_1: -216893596
+      MVU_Foreground_Tileset_01 1_7: -94837528
+      MVU_Foreground_Tileset_01 1_8: -1964356178
       MVU_Foreground_Tileset_01 1_9: -316611156
-      MVU_Foreground_Tileset_01 1_10: 989758181
-      MVU_Foreground_Tileset_01 1_15: 1201475756
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

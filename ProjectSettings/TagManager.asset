@@ -44,8 +44,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Top Ocean
+    uniqueID: 2657053043
+    locked: 0
+  - name: Mid Ocean
+    uniqueID: 3022467263
+    locked: 0
+  - name: Bottom Ocean
+    uniqueID: 760441073
+    locked: 0
   - name: Background
     uniqueID: 2342063795
+    locked: 0
+  - name: Surface
+    uniqueID: 1851571355
     locked: 0
   - name: Gameplay
     uniqueID: 1273837029
