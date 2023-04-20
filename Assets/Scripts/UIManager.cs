@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
         urchinText = GetComponent<TextMeshProUGUI>();
     }
 
-    public void UpdatePlayerUrchinsText(BoatBehavior boat){
-        urchinText.text = boat.NumberOfUrchins.ToString();
+    public void UpdatePlayerUrchinsText(PlayerBehavior player){
+        urchinText.text = player.NumberOfUrchinsOnPlayer.ToString();
     }
 }

@@ -12,6 +12,7 @@ public class PlayerBehavior : MonoBehaviour
     Rigidbody2D _rb;
     Vector2 swimDirection;
     [SerializeField] public uint NumberOfUrchinsOnPlayer {get; set;}
+    public UnityEvent<PlayerBehavior> OnGetUrchin;
     
 
     void Start()
@@ -56,24 +57,13 @@ public class PlayerBehavior : MonoBehaviour
         if (other.gameObject.tag == "Urchin" && other.gameObject.activeSelf){
             GetUrchin();
             other.gameObject.SetActive(false);
-        } else
-
-        if(other.gameObject.tag == "Boat"){
-            Debug.Log("Collided with boat");
-            DepositUrchins(other.gameObject.GetComponent<BoatBehavior>());
-        }
+        } 
     }
 
     public void GetUrchin(){
         NumberOfUrchinsOnPlayer += 1;
         Debug.Log("Player Urchins: " + NumberOfUrchinsOnPlayer);
-    }
-
-    public void DepositUrchins(BoatBehavior boat){ 
-        var numberOfUrchinsCollected = NumberOfUrchinsOnPlayer;
-        NumberOfUrchinsOnPlayer = 0;
-        Debug.Log("Depositing urchins: " + numberOfUrchinsCollected);
-        boat.DepositUrchins(numberOfUrchinsCollected);
+        OnGetUrchin.Invoke(this);
     }
 
 }

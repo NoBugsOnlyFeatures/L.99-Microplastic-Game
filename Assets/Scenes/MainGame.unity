@@ -218,7 +218,7 @@ RectTransform:
   - {fileID: 477269538}
   - {fileID: 1301899633}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -390,7 +390,7 @@ Transform:
   - {fileID: 2140401164}
   - {fileID: 144588813}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &361724444
 GameObject:
@@ -704,7 +704,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &706397864
 GameObject:
@@ -812,7 +812,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &706397868
 MonoBehaviour:
@@ -829,6 +829,21 @@ MonoBehaviour:
   underWaterDrag: 2
   underwaterAngularDrag: 1
   swimForce: 300
+  OnGetUrchin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 477269541}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: UpdatePlayerUrchinsText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &706397869
 Rigidbody2D:
   serializedVersion: 4
@@ -919,8 +934,65 @@ Transform:
   m_Children:
   - {fileID: 1327492075}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1145756040
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3185390865843107404, guid: 701c5ffff999c44418632c5d5c09701c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185390865843107404, guid: 701c5ffff999c44418632c5d5c09701c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.28591776
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185390865843107404, guid: 701c5ffff999c44418632c5d5c09701c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3538011
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185390865843107404, guid: 701c5ffff999c44418632c5d5c09701c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185390865843107404, guid: 701c5ffff999c44418632c5d5c09701c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185390865843107404, guid: 701c5ffff999c44418632c5d5c09701c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185390865843107404, guid: 701c5ffff999c44418632c5d5c09701c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185390865843107404, guid: 701c5ffff999c44418632c5d5c09701c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185390865843107404, guid: 701c5ffff999c44418632c5d5c09701c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185390865843107404, guid: 701c5ffff999c44418632c5d5c09701c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185390865843107404, guid: 701c5ffff999c44418632c5d5c09701c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185390865843107406, guid: 701c5ffff999c44418632c5d5c09701c, type: 3}
+      propertyPath: m_Name
+      value: Urchin
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 701c5ffff999c44418632c5d5c09701c, type: 3}
 --- !u!1 &1301899632
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,7 +2311,6 @@ GameObject:
   - component: {fileID: 1882858414}
   - component: {fileID: 1882858413}
   - component: {fileID: 1882858416}
-  - component: {fileID: 1882858417}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Boat
@@ -2332,7 +2403,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1882858416
 BoxCollider2D:
@@ -2360,33 +2431,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.18, y: 0.52}
   m_EdgeRadius: 0
---- !u!114 &1882858417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1882858412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89e13325dbfaaf24bb055f2c3a41ea52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnDepositUrchins:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 477269541}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: UpdatePlayerUrchinsText
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &2140401163
 GameObject:
   m_ObjectHideFlags: 0
