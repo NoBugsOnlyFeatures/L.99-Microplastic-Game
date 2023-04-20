@@ -10,7 +10,7 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] float underwaterAngularDrag = 1f;
     [SerializeField] float swimForce = 300f;
     Rigidbody2D _rb;
-    Vector2 swimDirection;
+    [SerializeField] Vector2 swimDirection;
     [SerializeField] public uint NumberOfUrchinsOnPlayer {get; set;}
     
 
@@ -75,5 +75,4 @@ public class PlayerBehavior : MonoBehaviour
         Debug.Log("Depositing urchins: " + numberOfUrchinsCollected);
         boat.DepositUrchins(numberOfUrchinsCollected);
     }
-
 }
