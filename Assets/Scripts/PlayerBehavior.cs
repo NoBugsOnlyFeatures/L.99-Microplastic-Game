@@ -10,6 +10,8 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] float underwaterAngularDrag = 1f;
     [SerializeField] float swimForce = 300f;
     Rigidbody2D _rb;
+    SpriteRenderer _sr;
+    bool isRightFacing; 
     Vector2 swimDirection;
     [SerializeField] public uint NumberOfUrchinsOnPlayer {get; set;}
     public UnityEvent<PlayerBehavior> OnGetUrchin;
@@ -18,6 +20,7 @@ public class PlayerBehavior : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _sr = GetComponent<SpriteRenderer>();
 
         _rb.drag = underWaterDrag;
         _rb.angularDrag = underwaterAngularDrag;
@@ -47,8 +50,14 @@ public class PlayerBehavior : MonoBehaviour
  
         if (Input.GetKey(KeyCode.D)){
             swimDirection += Vector2.right;
+            if(_sr.flipX){
+                _sr.flipX = false;
+            }
         } else if (Input.GetKey(KeyCode.A)){
             swimDirection += Vector2.left;
+            if(!_sr.flipX){
+                _sr.flipX = true;
+            }
         }
     }
 
