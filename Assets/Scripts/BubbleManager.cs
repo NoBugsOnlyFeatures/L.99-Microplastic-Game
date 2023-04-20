@@ -19,6 +19,11 @@ public class BubbleManager : MonoBehaviour
     [SerializeField]
     private bool _inRange = false;
 
+    [SerializeField]
+    private const float PERFECT_TIME_BONUS = 0.25f;
+
+    [SerializeField]
+    private const float BAD_TIMINING_PENALTY = -0.25f;
     void Start()
     {
         _spriteTimer = (_period / (_bubbleSprites.Length - 1));
@@ -36,6 +41,10 @@ public class BubbleManager : MonoBehaviour
     {
         return _inRange;
     }
+
+    public float GetTimingBonus () => PERFECT_TIME_BONUS;
+
+    public float GetTimingPenalty () => BAD_TIMINING_PENALTY;
 
     private void UpdateSprite()
     {

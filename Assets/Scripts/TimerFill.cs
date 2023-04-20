@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 public class TimerFill : MonoBehaviour
@@ -21,15 +22,23 @@ public class TimerFill : MonoBehaviour
     
     [SerializeField] private bool _isHoldingSpace, _canAddToFill, _hitFillBonus = false;
 
-    [SerializeField] private float _fillAmount, _totalFill = 0.0f;
+    [SerializeField] private float _fillBySecond, _totalFill = 0.0f;
     private float _fillRate = 5.0f;
 
     private float _fillMax = 100.0f;
 
-    [SerializeField] private Slider _oxygenBar;
+    /* [SerializeField] private Slider _oxygenBar;
     [SerializeField] private Gradient _oxygenGradient;
-    [SerializeField] private Image _oxygenBarForeground;
+    [SerializeField] private Image _oxygenBarForeground; */
 
+    [SerializeField]
+    private const float PERFECT_TIMING_BONUS = 0.1f;
+
+    [SerializeField]
+    private const float INCORRECT_RELEASE_PENALTY = 0.03f;
+
+    [SerializeField]
+    private OxygenManager _oxygenManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +47,7 @@ public class TimerFill : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         var playerAngle = _tick.GetTickAngle();
     
         if (Input.GetKeyDown(KeyCode.Space))
@@ -51,12 +60,13 @@ public class TimerFill : MonoBehaviour
 
                 if (playerAngle <= _perfectMaxAngle)
                 {
-                    _fillAmount = 10.0f;
+                    // _fillBySecond = 10.0f;
+                    _fillBySecond = PERFECT_TIMING_BONUS;
                     _hitFillBonus = true;
                 }
                 else
                 {
-                    _fillAmount = 0.0f;
+                    _fillBySecond = 0.0f;
                 }
 
                 SetFillAmount(playerAngle);
@@ -72,30 +82,34 @@ public class TimerFill : MonoBehaviour
                 // lower fill by half if land in red zone
                 if (playerAngle > _exitMinAngle)
                 {
-                    _fillAmount *= 0.5f;
+                    // _fillBySecond *= 0.5f;
+                    _fillBySecond -= INCORRECT_RELEASE_PENALTY;
                 }
 
                 if (_canAddToFill)
                 {
-                    _totalFill += _fillAmount * Time.deltaTime;
+                    // _totalFill += _fillAmount * Time.deltaTime;
 
-                    var oxygenFill = _totalFill / _fillMax;
+                    /* var oxygenFill = _totalFill / _fillMax;
                     _oxygenBar.value = oxygenFill;
-                    _oxygenBarForeground.color = _oxygenGradient.Evaluate(oxygenFill);
+                    _oxygenBarForeground.color = _oxygenGradient.Evaluate(oxygenFill);*/
+
+                    _oxygenManager.AddOxygenBySec(_fillBySecond);
                 }
             }
 
-            _tick.Reset();
             _playerFill.fillAmount = 0.0f;
             _hitFillBonus = false;
             _canAddToFill = false;
+            _fillBySecond = 0f;
         }
 
         if (_isHoldingSpace)
         {
             if (playerAngle >= _perfectMinAngle && playerAngle < _exitMaxAngle)
             {
-                _fillAmount += _fillRate;
+                // _fillAmount += _fillRate;
+                _fillBySecond += Time.deltaTime;
                 SetFillAmount(playerAngle);
             }
         }

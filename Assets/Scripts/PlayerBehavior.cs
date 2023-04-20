@@ -74,5 +74,4 @@ public class PlayerBehavior : MonoBehaviour
         Debug.Log("Player Urchins: " + NumberOfUrchinsOnPlayer);
         OnGetUrchin.Invoke(this);
     }
-
 }
