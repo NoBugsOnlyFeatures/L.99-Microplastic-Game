@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -15,8 +16,21 @@ public class PlayerBehavior : MonoBehaviour
     Vector2 swimDirection;
     [SerializeField] public uint NumberOfUrchinsOnPlayer {get; set;}
     public UnityEvent<PlayerBehavior> OnGetUrchin;
-    
 
+    private Animator _animator;
+    private bool _isDiving = false;
+
+    public bool IsDiving
+    {
+        get => _isDiving;
+        set => _isDiving = value;
+    }
+
+
+    void Awake() 
+    {
+        _animator = GetComponent<Animator>();    
+    }
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -30,12 +44,18 @@ public class PlayerBehavior : MonoBehaviour
 
     void Update()
     {
-        keyDirection();
+        if (IsDiving)
+        {
+            keyDirection();
+        }
     }
 
     void FixedUpdate()
     {
-        _rb.AddForce(swimDirection * swimForce * Time.deltaTime,ForceMode2D.Force);
+        if (IsDiving)
+        {
+            _rb.AddForce(swimDirection * swimForce * Time.deltaTime,ForceMode2D.Force);
+        }
     }
 
     void keyDirection()
@@ -65,13 +85,13 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (other.gameObject.tag == "Urchin" && other.gameObject.activeSelf){
             GetUrchin();
-            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
         } 
     }
 
     public void GetUrchin(){
         NumberOfUrchinsOnPlayer += 1;
-        Debug.Log("Player Urchins: " + NumberOfUrchinsOnPlayer);
+        // Debug.Log("Player Urchins: " + NumberOfUrchinsOnPlayer);
         OnGetUrchin.Invoke(this);
     }
 }

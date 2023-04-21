@@ -39,29 +39,18 @@ public class MinigameManager : MonoBehaviour
     [SerializeField] private Gradient _oxygenGradient;
     [SerializeField] private Image _oxygenBarForeground;
 
-    [SerializeField] private Image _hitBoxImage;
-    [SerializeField] private GameObject _beatPrefab;
-    [SerializeField] private Transform _beatSpawner;
     [SerializeField] private readonly float _maxOxygenAmount = 100.0f;
-
-    [SerializeField] private Transform _minHitBox, _maxHitBox;
-
-    private GameObject _canvas;
 
     private float _currentOxygen = 0.0f;
 
-    private float _lastTime, _deltaTime, _currentTime;
     private float bpm = 20f;
     private float sampleLength = 60f; // in seconds;
 
     [SerializeField] private GameObject _triangle;
-    private float initalX;
     [SerializeField] private Transform _startingTransform;
     [SerializeField] private Transform _endingTransform;
 
-    private float _movementAmplitude, omega, secondsPerMeasure, period, _timePassed;
-    private float _minHitX, _maxHitX;
-
+    private float secondsPerMeasure, _timePassed;
     private bool _inRange = false;
     private float _rangeThreshold = 1.5f;
 
@@ -154,7 +143,6 @@ public class MinigameManager : MonoBehaviour
     [SerializeField] private float _entryPointMin, _entryPointMax;
     [SerializeField] private float _exitPointMin, _exitPointMax;
     private float _playerVelocity;
-    private Vector3 _initialPoint;
 
     [SerializeField]
     private bool _isHoldingSpace, _canAddToFill, _hitFillBonus = false;

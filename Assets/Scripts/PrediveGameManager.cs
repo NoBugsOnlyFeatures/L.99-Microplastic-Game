@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.Assertions.Comparers;
 
 enum GameState
@@ -10,6 +11,8 @@ enum GameState
     TITLE,
     BREATHING,
     DIVING,
+
+    LOADING
 }
 public class PrediveGameManager : MonoBehaviour
 {
@@ -21,9 +24,6 @@ public class PrediveGameManager : MonoBehaviour
     private OxygenManager _oxygenManager;
     private BubbleManager _airBubbleManager;
     private TimerCircleTick _timerCircleManager;
-    private GameObject _titleScreenUI;
-    private GameObject _startButtonGameObject, _instructionsGameObject, _quitGameObject;
-    private Button _startButton, _instructionsButton, _quitButton;
 
     private TMP_Text _countdownTimerText;
     [SerializeField] private float _breathingGameLength = 10.0f;
@@ -49,16 +49,6 @@ public class PrediveGameManager : MonoBehaviour
         _timerCircleManager = _timerCircleGameObject.GetComponent<TimerCircleTick>();
         _oxygenManager = _oxygenBarGameObject.GetComponent<OxygenManager>();
 
-        _titleScreenUI = GameObject.Find("TitleScreen");
-
-        _startButtonGameObject = _titleScreenUI.transform.GetChild(1).gameObject;
-        _instructionsGameObject = _titleScreenUI.transform.GetChild(2).gameObject;
-        _quitGameObject = _titleScreenUI.transform.GetChild(3).gameObject;
-        
-        _startButton = _startButtonGameObject.GetComponent<Button>();
-        _instructionsButton = _instructionsGameObject.GetComponent<Button>();
-        _quitButton = _quitGameObject.GetComponent<Button>();
-
         _countdownTimerText = GameObject.Find("BreathingCountdown").GetComponent<TMP_Text>();
     }
 
@@ -73,8 +63,6 @@ public class PrediveGameManager : MonoBehaviour
         _timerCircleGameObject.SetActive(false);
         _oxygenBarGameObject.SetActive(false);
         _countdownTimerText.text = string.Empty;
-
-        _startButton.onClick.AddListener(StartGame);
     }
 
     // Update is called once per frame
@@ -86,7 +74,7 @@ public class PrediveGameManager : MonoBehaviour
             _countdownTimerText.text = Mathf.FloorToInt(_breathingGameLength - _miniGameCountdownTimer).ToString();
             if (_miniGameCountdownTimer >= _breathingGameLength)
             {
-                StartDive();
+                StartCoroutine(StartDive());
                 _miniGameCountdownTimer = 0.0f;
             }
 
@@ -98,10 +86,12 @@ public class PrediveGameManager : MonoBehaviour
             if (_playerObject.transform.position.y <= -10.0f && !_playerHasStoppedMoving)
             {
                 _playerHasStoppedMoving = true;
+
+                StartCoroutine(LoadLevel());
                 // _player.StopMoving();
 
-                _airBubbleGameObject.SetActive(true);
-                _oxygenManager.SetIsUnderWater(true);
+                // _airBubbleGameObject.SetActive(true);
+                // _oxygenManager.SetIsUnderWater(true);
             }
             else if (!_playerHasStoppedMoving)
             {
@@ -116,23 +106,16 @@ public class PrediveGameManager : MonoBehaviour
 
         }
     }
-
-    public void StartGame()
+    
+    private IEnumerator StartDive()
     {
-        _titleScreenUI.SetActive(false);
-
-        _playerObject.SetActive(true);
-        _timerCircleGameObject.SetActive(true);
-        _oxygenBarGameObject.SetActive(true);
-
-        _countdownTimerText.text = _breathingGameLength.ToString();
-
-        _currentState = GameState.BREATHING;
-    }
-
-    private void StartDive()
-    {
+        // _player.TriggerDiveAnimation();
         _countdownTimerText.text = string.Empty;
+
+        while(_player.IsDiving)
+        {
+            yield return null;
+        }
 
         _diverStartPosition = _playerObject.transform.position;
         _diverEndPositon = new Vector3(_diverStartPosition.x, -10);
@@ -144,5 +127,41 @@ public class PrediveGameManager : MonoBehaviour
         _timerCircleGameObject.SetActive(false);
 
         _currentState = GameState.DIVING;
+    }
+
+    private IEnumerator LoadLevel()
+    {
+         //Begin to load the Scene you specify
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("MainGame");
+        //Don't let the Scene activate until you allow it to
+        asyncOperation.allowSceneActivation = false;
+
+        //When the load is still in progress, output the Text and progress bar
+        while (!asyncOperation.isDone)
+        {
+            // Check if the load has finished
+            if (asyncOperation.progress >= 0.9f)
+            {
+                //Wait to you press the space key to activate the Scene
+                if (Input.GetKeyDown(KeyCode.Space))
+                    //Activate the Scene
+                    asyncOperation.allowSceneActivation = true;
+            }
+
+            yield return null;
+        }
+    }
+
+    public void StartGame()
+    {
+        // _titleScreenUI.SetActive(false);
+
+        _playerObject.SetActive(true);
+        _timerCircleGameObject.SetActive(true);
+        _oxygenBarGameObject.SetActive(true);
+
+        _countdownTimerText.text = _breathingGameLength.ToString();
+
+        _currentState = GameState.BREATHING;
     }
 }
