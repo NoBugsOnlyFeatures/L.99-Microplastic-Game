@@ -8,16 +8,18 @@ public class UrchinSpawner : MonoBehaviour
     int xMin = -4;
     int y = 2;
 
+    [SerializeField] uint numberofUrchins = 60;
+
     [SerializeField] GameObject urchin;
-    [SerializeField] private int _urchinSpawnCount = 150;
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     public void SpawnUrchins()
     {
-        for(int i = 0; i < _urchinSpawnCount; i++){
+        for(int i = 0; i < numberofUrchins; i++){
             int x = Random.Range(xMin,xMax);
 
             Instantiate(urchin, new Vector3(x,y,0), Quaternion.identity);
