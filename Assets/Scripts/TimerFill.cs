@@ -16,16 +16,12 @@ public class TimerFill : MonoBehaviour
     private float _perfectMinAngle = 89.8f; 
     private float _perfectMaxAngle = 118.2f;
     
-    private float _normalMinAngle = 118.3f;
     private float _exitMaxAngle = 270.0f;
     private float _exitMinAngle = 255f;
     
     [SerializeField] private bool _isHoldingSpace, _canAddToFill, _hitFillBonus = false;
 
-    [SerializeField] private float _fillBySecond, _totalFill = 0.0f;
-    private float _fillRate = 5.0f;
-
-    private float _fillMax = 100.0f;
+    [SerializeField] private float _fillBySecond = 0.0f;
 
     /* [SerializeField] private Slider _oxygenBar;
     [SerializeField] private Gradient _oxygenGradient;

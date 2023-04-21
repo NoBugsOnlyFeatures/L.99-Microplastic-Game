@@ -72,6 +72,10 @@ public class OxygenManager : MonoBehaviour
         }
     }
 
+    void Awake()
+    {
+        _currentBubble = GameObject.Find("AirBubble").GetComponent<BubbleManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -107,7 +111,6 @@ public class OxygenManager : MonoBehaviour
     public void AddOxygenBySec(float fillSeconds)
     {
         _currentOxygenTankInSeconds += fillSeconds;
-        Debug.Log("Current Oxygen in Seconds: " + _currentOxygenTankInSeconds);
         if (_currentOxygenTankInSeconds >= _currentLevelOxygenMaxInSeconds)
         {
             _currentOxygenTankInSeconds = _currentLevelOxygenMaxInSeconds;
@@ -119,11 +122,6 @@ public class OxygenManager : MonoBehaviour
 
 
         UpdateOxygenBar();
-    }
-
-    public void SetIsUnderWater(bool value)
-    {
-        _isUnderWater = value;
     }
 
     private void UpdateOxygenBar()

@@ -14,6 +14,11 @@ public class UrchinSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+    }
+
+    public void SpawnUrchins()
+    {
         for(int i = 0; i < numberofUrchins; i++){
             int x = Random.Range(xMin,xMax);
 
