@@ -9644,6 +9644,21 @@ MonoBehaviour:
   underWaterDrag: 2
   underwaterAngularDrag: 1
   swimForce: 300
+  OnGetUrchin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2122073021}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: UpdatePlayerUrchinsText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &706397869
 Rigidbody2D:
   serializedVersion: 4
@@ -40216,7 +40231,7 @@ Tilemap:
       - {fileID: 764876018, guid: 6f70833e7e307924ba0aa9f194c122c9, type: 3}
       - {fileID: -2122038113, guid: 6f70833e7e307924ba0aa9f194c122c9, type: 3}
       - {fileID: 643599524, guid: 6f70833e7e307924ba0aa9f194c122c9, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 22, y: 3, z: 0}
@@ -40346,7 +40361,7 @@ Tilemap:
       - {fileID: 764876018, guid: 6f70833e7e307924ba0aa9f194c122c9, type: 3}
       - {fileID: -2122038113, guid: 6f70833e7e307924ba0aa9f194c122c9, type: 3}
       - {fileID: 643599524, guid: 6f70833e7e307924ba0aa9f194c122c9, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 61, y: 3, z: 0}
