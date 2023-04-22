@@ -31,6 +31,7 @@ public class OxygenManager : MonoBehaviour
 
     private bool _isAlive = true;
     private bool _countdownStarted = false;
+    private bool _hitBubbleRange = false;
     // [SerializeField] private bool _isBubbleInRange = false;
     [SerializeField] private BubbleManager _currentBubble;
 
@@ -110,8 +111,10 @@ public class OxygenManager : MonoBehaviour
                 _currentOxygen = Mathf.Clamp(_currentOxygen, 0, _totalOxygen);
                 UpdateOxygenBar(); */
 
-                var deltaOxygen = _currentBubble.IsInRange() ? _currentBubble.GetTimingBonus() : 0.0f;
-                AddOxygenBySec(deltaOxygen);
+                _hitBubbleRange = _currentBubble.IsInRange();
+
+                // var deltaOxygen = _currentBubble.IsInRange()
+                // AddOxygenBySec(deltaOxygen);
             }
         }
     }
@@ -171,7 +174,7 @@ public class OxygenManager : MonoBehaviour
 
     private void DepleteOxygen()
     {
-        if (_countdownStarted)
+        if (_countdownStarted && !_hitBubbleRange)
         {
             /* _currentOxygen -= (_totalOxygen * _depletionRate);
             UpdateOxygenBar(); */
@@ -179,6 +182,8 @@ public class OxygenManager : MonoBehaviour
             // _currentOxygenTankInSeconds -= _currentLevelOxygenMaxInSeconds * OXYGEN_DEPLETION_RATE_PER_SECOND;
             _currentOxygenTankInSeconds -= 1;
             UpdateOxygenBar();
+
+            _hitBubbleRange = false;
         }
     }
 
