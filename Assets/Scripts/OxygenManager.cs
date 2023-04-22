@@ -168,22 +168,24 @@ public class OxygenManager : MonoBehaviour
         while (_isAlive)
         {
             DepleteOxygen();
+            _hitBubbleRange = false;
             yield return new WaitForSeconds(OXYGEN_DEPLETION_TIME);
         }
     }
 
     private void DepleteOxygen()
     {
-        if (_countdownStarted && !_hitBubbleRange)
+        if (_countdownStarted)
         {
             /* _currentOxygen -= (_totalOxygen * _depletionRate);
             UpdateOxygenBar(); */
 
             // _currentOxygenTankInSeconds -= _currentLevelOxygenMaxInSeconds * OXYGEN_DEPLETION_RATE_PER_SECOND;
-            _currentOxygenTankInSeconds -= 1;
-            UpdateOxygenBar();
-
-            _hitBubbleRange = false;
+            if (!_hitBubbleRange)
+            {
+                _currentOxygenTankInSeconds -= 1;
+                UpdateOxygenBar();
+            }
         }
     }
 
