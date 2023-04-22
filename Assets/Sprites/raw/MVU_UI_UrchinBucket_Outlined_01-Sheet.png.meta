@@ -1,0 +1,409 @@
+fileFormatVersion: 2
+guid: 13e0b8e8c98e9424995898a569d009eb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MVU_UI_UrchinBucket_Outlined_01-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 16
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a37b53a0eeb49a2bb6905db8905d97
+      internalID: 2099957408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_UI_UrchinBucket_Outlined_01-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 16
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc2f87f32d9b54d41b56fcd49a9bdab1
+      internalID: -629852671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_UI_UrchinBucket_Outlined_01-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 16
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceade6bffb4f84c808ab13b0f64136a1
+      internalID: 2051305428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_UI_UrchinBucket_Outlined_01-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 16
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8422fbaa5b9604b9a90211b8fcdc64b7
+      internalID: -1225869240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_UI_UrchinBucket_Outlined_01-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 16
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f03da2afd13e474eaa1a659fa04723a
+      internalID: 507842539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_UI_UrchinBucket_Outlined_01-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 16
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47611ffc7a3b54a74b88fc9dedb7e11f
+      internalID: 1616162409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_UI_UrchinBucket_Outlined_01-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 16
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2a013434e6749c193d5f0e58967ecc
+      internalID: -1464487184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_UI_UrchinBucket_Outlined_01-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 16
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c609416e265be4eec801807b426ad69a
+      internalID: 1049321894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_UI_UrchinBucket_Outlined_01-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 16
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 672599fca36b64506ad7f6f37c33c693
+      internalID: 379297005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_UI_UrchinBucket_Outlined_01-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 16
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9edc2a1ef40244e79024f8c585b9b65
+      internalID: -1562405513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_UI_UrchinBucket_Outlined_01-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 16
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8207c190a183e4bc583caefd9c27b02c
+      internalID: -997331734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_UI_UrchinBucket_Outlined_01-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 15
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de3880266fd44aa39ecb4626f0963d8
+      internalID: -958958478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MVU_UI_UrchinBucket_Outlined_01-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 14
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb87797ca9abc44699a466d928e8dc6c
+      internalID: -1624357542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MVU_UI_UrchinBucket_Outlined_01-Sheet_3: -1225869240
+      MVU_UI_UrchinBucket_Outlined_01-Sheet_1: -629852671
+      MVU_UI_UrchinBucket_Outlined_01-Sheet_6: -1464487184
+      MVU_UI_UrchinBucket_Outlined_01-Sheet_4: 507842539
+      MVU_UI_UrchinBucket_Outlined_01-Sheet_2: 2051305428
+      MVU_UI_UrchinBucket_Outlined_01-Sheet_12: -1624357542
+      MVU_UI_UrchinBucket_Outlined_01-Sheet_10: -997331734
+      MVU_UI_UrchinBucket_Outlined_01-Sheet_8: 379297005
+      MVU_UI_UrchinBucket_Outlined_01-Sheet_0: 2099957408
+      MVU_UI_UrchinBucket_Outlined_01-Sheet_11: -958958478
+      MVU_UI_UrchinBucket_Outlined_01-Sheet_9: -1562405513
+      MVU_UI_UrchinBucket_Outlined_01-Sheet_7: 1049321894
+      MVU_UI_UrchinBucket_Outlined_01-Sheet_5: 1616162409
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

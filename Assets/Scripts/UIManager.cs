@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
     _oxygenGaugeGameObject, _oxygenBarGameObject, _countDownTimerGameObject, 
     _countDownBackgroundObject, _instructionsObject;
 
-    private GameObject _urchinCanvasGameObject;
+    private GameObject _urchinCounterGameObject;
     private TextMeshProUGUI urchinText;
     private Image _breathingCountDownImage;
 
@@ -63,8 +63,8 @@ public class UIManager : MonoBehaviour
 
 
         // Set Urchin Related UI
-        _urchinCanvasGameObject = GameObject.Find("UrchinCanvas");
-        urchinText = _urchinCanvasGameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
+        _urchinCounterGameObject = GameObject.Find("UrchinCounter");
+        urchinText = _urchinCounterGameObject.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
     }
     void Start()
     {
@@ -80,7 +80,7 @@ public class UIManager : MonoBehaviour
         _gameOverPanel.SetActive(false);
 
         _oxygenCanvasGameObject.SetActive(false);
-        _urchinCanvasGameObject.SetActive(false);
+        _urchinCounterGameObject.SetActive(false);
 
         OxygenManager.OnOxygenEmpty += HandleOxygenDepleted;
     }
@@ -153,7 +153,7 @@ public class UIManager : MonoBehaviour
         EnableOxygenGaugeUI(false);
         EnableAirBubbleUI(true);
 
-        _urchinCanvasGameObject.SetActive(true);
+        _urchinCounterGameObject.SetActive(true);
         _gameManager.BeginDive();
     }
 
@@ -172,7 +172,7 @@ public class UIManager : MonoBehaviour
     private void ResetUI()
     {
         _oxygenCanvasGameObject.SetActive(false);
-        _urchinCanvasGameObject.SetActive(false);
+        _urchinCounterGameObject.SetActive(false);
 
         EnableOxygenBarUI(false);
         EnableOxygenGaugeUI(false);
