@@ -54,6 +54,9 @@ TagManager:
   - name: Bottom Ocean
     uniqueID: 760441073
     locked: 0
+  - name: BackgroundCoral
+    uniqueID: 1351694711
+    locked: 0
   - name: Background
     uniqueID: 2342063795
     locked: 0
@@ -63,6 +66,6 @@ TagManager:
   - name: Gameplay
     uniqueID: 1273837029
     locked: 0
-  - name: Foreground
+  - name: Coral
     uniqueID: 1832255057
     locked: 0
