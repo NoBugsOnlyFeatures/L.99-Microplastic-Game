@@ -47,10 +47,12 @@ public class MainGameManager : MonoBehaviour
         
     }
 
-    public void StartGame()
+    public void StartGame(bool isTestRun)
     {
         _diverGameObject.transform.position = _initialDiverPosition;
         _diverGameObject.SetActive(true);
+
+        _oxygenManager.SetOxygenLimit(isTestRun);
     }
 
     public void BeginDive()

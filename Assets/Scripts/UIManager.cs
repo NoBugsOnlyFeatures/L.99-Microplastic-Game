@@ -10,14 +10,14 @@ public class UIManager : MonoBehaviour
     private GameObject _titleScreenUI, _titleScreenButtonUI;
     private GameObject _gameOverPanel;
 
-    private GameObject _startButtonGameObject, _instructionsGameObject, _quitGameObject;
-    private Button _startButton, _instructionsButton, _titleQuitButton, _instructionsBackButton;
+    private GameObject _startButtonGameObject, _testRunGameObject, _quitGameObject;
+    private Button _startButton, _testRunButton, _titleQuitButton;
 
     private Button _retryButton, _gameOverQuitButton;
 
     private GameObject _oxygenCanvasGameObject, _airBubbleGameObject,
     _oxygenGaugeGameObject, _oxygenBarGameObject, _countDownTimerGameObject, 
-    _countDownBackgroundObject, _instructionsObject;
+    _countDownBackgroundObject;
 
     private GameObject _urchinCounterGameObject;
     private TextMeshProUGUI urchinText;
@@ -37,15 +37,13 @@ public class UIManager : MonoBehaviour
         _titleScreenUI = GameObject.Find("TitleScreen");
         _titleScreenButtonUI = GameObject.Find("TitleButtons");
         _gameOverPanel = GameObject.Find("GameOverPanel");
-        _instructionsBackButton = GameObject.Find("BackButton").GetComponent<Button>();
-        _instructionsObject = GameObject.Find("Instructions");
 
         _startButtonGameObject = _titleScreenButtonUI.transform.GetChild(0).gameObject;
-        _instructionsGameObject = _titleScreenButtonUI.transform.GetChild(1).gameObject;
+        _testRunGameObject = _titleScreenButtonUI.transform.GetChild(1).gameObject;
         _quitGameObject = _titleScreenButtonUI.transform.GetChild(2).gameObject;
         
         _startButton = _startButtonGameObject.GetComponent<Button>();
-        _instructionsButton = _instructionsGameObject.GetComponent<Button>();
+        _testRunButton = _testRunGameObject.GetComponent<Button>();
         _titleQuitButton = _quitGameObject.GetComponent<Button>();
 
         _retryButton = _gameOverPanel.transform.GetChild(2).gameObject.GetComponent<Button>();
@@ -68,15 +66,13 @@ public class UIManager : MonoBehaviour
     }
     void Start()
     {
-        _startButton.onClick.AddListener(OnStartButtonClicked);
+        _startButton.onClick.AddListener(() => OnStartButtonClicked(/* isTestRun */ false));
         _titleQuitButton.onClick.AddListener(OnQuitButtonClicked);
-        _instructionsButton.onClick.AddListener(() => ToggleInstructions(true));
+        _testRunButton.onClick.AddListener(() => OnStartButtonClicked(/* isTestRun */ true));
 
         _retryButton.onClick.AddListener(OnRetryButtonClicked);
         _gameOverQuitButton.onClick.AddListener(OnQuitButtonClicked);
-        _instructionsBackButton.onClick.AddListener(() => ToggleInstructions(false));
 
-        _instructionsObject.SetActive(false);
         _gameOverPanel.SetActive(false);
 
         _oxygenCanvasGameObject.SetActive(false);
@@ -125,12 +121,12 @@ public class UIManager : MonoBehaviour
         _oxygenGaugeGameObject.SetActive(isEnabled);
     }
 
-    void OnStartButtonClicked()
+    void OnStartButtonClicked(bool isTestRun)
     {
         _titleScreenUI.SetActive(false);
 
         EnableBreathingMinigame();
-        _gameManager.StartGame();
+        _gameManager.StartGame(isTestRun);
     }
 
     void EnableBreathingMinigame()
@@ -194,15 +190,7 @@ public class UIManager : MonoBehaviour
     private void OnRetryButtonClicked()
     {
         _gameOverPanel.SetActive(false);
-        
-        // EnableBreathingMinigame();
-        // _gameManager.StartGame();
-        OnStartButtonClicked();
-    }
 
-    private void ToggleInstructions(bool instructionsVisible)
-    {
-        _titleScreenButtonUI.SetActive(!instructionsVisible);
-        _instructionsObject.SetActive(instructionsVisible);
+        OnStartButtonClicked(/*isTestRun */ false);
     }
 }
