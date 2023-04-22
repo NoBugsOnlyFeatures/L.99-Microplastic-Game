@@ -14,8 +14,11 @@ public class PlayerBehavior : MonoBehaviour
     SpriteRenderer _sr;
     bool isRightFacing; 
     Vector2 swimDirection;
-    [SerializeField] public uint NumberOfUrchinsOnPlayer {get; set;}
+    public uint NumberOfUrchinsOnPlayer {get; set;}
     public UnityEvent<PlayerBehavior> OnGetUrchin;
+
+    GameObject _urchinCollectionAura;
+    
 
     private Animator _animator;
     private bool _isDiving = false;
@@ -35,6 +38,8 @@ public class PlayerBehavior : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _sr = GetComponent<SpriteRenderer>();
+
+        _urchinCollectionAura = GameObject.FindGameObjectWithTag("UrchinCollectionAura");
 
         _rb.drag = underWaterDrag;
         _rb.angularDrag = underwaterAngularDrag;
@@ -72,26 +77,25 @@ public class PlayerBehavior : MonoBehaviour
             swimDirection += Vector2.right;
             if(_sr.flipX){
                 _sr.flipX = false;
+                SwapCollectionAuraPosition();
             }
         } else if (Input.GetKey(KeyCode.A)){
             swimDirection += Vector2.left;
             if(!_sr.flipX){
                 _sr.flipX = true;
+                SwapCollectionAuraPosition();
             }
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Urchin" && other.gameObject.activeSelf){
-            GetUrchin();
-            Destroy(other.gameObject);
-        } 
-    }
-
     public void GetUrchin(){
         NumberOfUrchinsOnPlayer += 1;
-        // Debug.Log("Player Urchins: " + NumberOfUrchinsOnPlayer);
+        Debug.Log("OnGetUrchin event"+OnGetUrchin);
         OnGetUrchin.Invoke(this);
+    }
+
+    private void SwapCollectionAuraPosition(){
+        var pos = _urchinCollectionAura.transform.localPosition;
+        _urchinCollectionAura.transform.localPosition = new Vector3(-pos.x,pos.y,pos.z);
     }
 }

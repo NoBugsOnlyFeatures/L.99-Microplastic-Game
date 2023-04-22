@@ -7,6 +7,7 @@ TagManager:
   - GameManager
   - Urchin
   - Boat
+  - UrchinCollectionAura
   layers:
   - Default
   - TransparentFX
