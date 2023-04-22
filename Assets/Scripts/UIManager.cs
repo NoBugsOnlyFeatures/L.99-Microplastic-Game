@@ -7,18 +7,24 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     private MainGameManager _gameManager;
-    private GameObject _titleScreenUI;
-    private GameObject _startButtonGameObject, _instructionsGameObject, _quitGameObject;
-    private Button _startButton, _instructionsButton, _quitButton;
+    private GameObject _titleScreenUI, _titleScreenButtonUI;
+    private GameObject _gameOverPanel;
 
-    private GameObject _oxygenCanvasGameObject, _airBubbleGameObject, _oxygenGaugeGameObject, _oxygenBarGameObject, _countDownTimerGameObject, _countDownBackgroundObject;
+    private GameObject _startButtonGameObject, _instructionsGameObject, _quitGameObject;
+    private Button _startButton, _instructionsButton, _titleQuitButton, _instructionsBackButton;
+
+    private Button _retryButton, _gameOverQuitButton;
+
+    private GameObject _oxygenCanvasGameObject, _airBubbleGameObject,
+    _oxygenGaugeGameObject, _oxygenBarGameObject, _countDownTimerGameObject, 
+    _countDownBackgroundObject, _instructionsObject;
 
     private GameObject _urchinCanvasGameObject;
     private TextMeshProUGUI urchinText;
     private Image _breathingCountDownImage;
 
     private float _currentBreathingTime = 0.0f;
-    [SerializeField] private float _breathingGameLength = 10.0f;
+    [SerializeField] private float _breathingGameLength = 60.0f;
     [SerializeField] private Gradient _countDownGradient;
 
     private bool _isBreathingGameActive = false;
@@ -29,14 +35,21 @@ public class UIManager : MonoBehaviour
 
         // Set Title Screen UI
         _titleScreenUI = GameObject.Find("TitleScreen");
+        _titleScreenButtonUI = GameObject.Find("TitleButtons");
+        _gameOverPanel = GameObject.Find("GameOverPanel");
+        _instructionsBackButton = GameObject.Find("BackButton").GetComponent<Button>();
+        _instructionsObject = GameObject.Find("Instructions");
 
-        _startButtonGameObject = _titleScreenUI.transform.GetChild(1).gameObject;
-        _instructionsGameObject = _titleScreenUI.transform.GetChild(2).gameObject;
-        _quitGameObject = _titleScreenUI.transform.GetChild(3).gameObject;
+        _startButtonGameObject = _titleScreenButtonUI.transform.GetChild(0).gameObject;
+        _instructionsGameObject = _titleScreenButtonUI.transform.GetChild(1).gameObject;
+        _quitGameObject = _titleScreenButtonUI.transform.GetChild(2).gameObject;
         
         _startButton = _startButtonGameObject.GetComponent<Button>();
         _instructionsButton = _instructionsGameObject.GetComponent<Button>();
-        _quitButton = _quitGameObject.GetComponent<Button>();
+        _titleQuitButton = _quitGameObject.GetComponent<Button>();
+
+        _retryButton = _gameOverPanel.transform.GetChild(2).gameObject.GetComponent<Button>();
+        _gameOverQuitButton = _gameOverPanel.transform.GetChild(3).gameObject.GetComponent<Button>();
 
         // Set Oxygen Related UI
         _oxygenCanvasGameObject = GameObject.Find("OxygenCanvas");
@@ -56,9 +69,20 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         _startButton.onClick.AddListener(OnStartButtonClicked);
+        _titleQuitButton.onClick.AddListener(OnQuitButtonClicked);
+        _instructionsButton.onClick.AddListener(() => ToggleInstructions(true));
+
+        _retryButton.onClick.AddListener(OnRetryButtonClicked);
+        _gameOverQuitButton.onClick.AddListener(OnQuitButtonClicked);
+        _instructionsBackButton.onClick.AddListener(() => ToggleInstructions(false));
+
+        _instructionsObject.SetActive(false);
+        _gameOverPanel.SetActive(false);
 
         _oxygenCanvasGameObject.SetActive(false);
         _urchinCanvasGameObject.SetActive(false);
+
+        OxygenManager.OnOxygenEmpty += HandleOxygenDepleted;
     }
 
     void Update()
@@ -104,6 +128,7 @@ public class UIManager : MonoBehaviour
     void OnStartButtonClicked()
     {
         _titleScreenUI.SetActive(false);
+
         EnableBreathingMinigame();
         _gameManager.StartGame();
     }
@@ -116,7 +141,9 @@ public class UIManager : MonoBehaviour
         EnableOxygenGaugeUI(true);
         EnableAirBubbleUI(false);
 
+        _countDownBackgroundObject.SetActive(true);
         _countDownTimerGameObject.SetActive(true);
+
         _isBreathingGameActive = true;
 
     }
@@ -135,5 +162,47 @@ public class UIManager : MonoBehaviour
         var fillAmount = (_breathingGameLength - _currentBreathingTime) / _breathingGameLength;
         _breathingCountDownImage.fillAmount = fillAmount;
         _breathingCountDownImage.color = _countDownGradient.Evaluate(fillAmount);
+    }
+
+    private void HandleOxygenDepleted()
+    {
+        ResetUI();
+    }
+
+    private void ResetUI()
+    {
+        _oxygenCanvasGameObject.SetActive(false);
+        _urchinCanvasGameObject.SetActive(false);
+
+        EnableOxygenBarUI(false);
+        EnableOxygenGaugeUI(false);
+        EnableAirBubbleUI(false);
+        _currentBreathingTime = 0.0f;
+
+        _gameManager.ResetGame();
+
+        urchinText.text = "0";
+
+        _gameOverPanel.SetActive(true);
+    }
+
+    private void OnQuitButtonClicked()
+    {
+        Application.Quit();
+    }
+
+    private void OnRetryButtonClicked()
+    {
+        _gameOverPanel.SetActive(false);
+        
+        // EnableBreathingMinigame();
+        // _gameManager.StartGame();
+        OnStartButtonClicked();
+    }
+
+    private void ToggleInstructions(bool instructionsVisible)
+    {
+        _titleScreenButtonUI.SetActive(!instructionsVisible);
+        _instructionsObject.SetActive(instructionsVisible);
     }
 }

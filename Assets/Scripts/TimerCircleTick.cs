@@ -16,7 +16,7 @@ public class TimerCircleTick : MonoBehaviour
     private Image _tickImage;
 
     [SerializeField]
-    private float _tickSpeed = 0.5f;
+    private float _tickSpeed = 5f;
     private Vector3 _initialPosition;
     private Quaternion _initialRotation;
 
