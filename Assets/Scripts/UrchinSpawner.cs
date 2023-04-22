@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class UrchinSpawner : MonoBehaviour
 {
-    int xMax = 42;
-    int xMin = -4;
-    int y = 0;
+    float xMax = 42f;
+    float xMin = -4f;
+    float y = 0.5f;
 
     [SerializeField] uint numberofUrchins = 60;
 
@@ -20,7 +20,7 @@ public class UrchinSpawner : MonoBehaviour
     public void SpawnUrchins()
     {
         for(int i = 0; i < numberofUrchins; i++){
-            int x = Random.Range(xMin,xMax);
+            float x = Random.Range(xMin,xMax);
 
             Instantiate(urchin, new Vector3(x,y,0), Quaternion.identity);
         }
