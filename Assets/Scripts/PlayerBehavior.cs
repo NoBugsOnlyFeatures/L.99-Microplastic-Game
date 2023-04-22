@@ -28,6 +28,9 @@ public class PlayerBehavior : MonoBehaviour
     private Animator _animator;
     private bool _isDiving = false;
 
+    private GameObject _airBubbleObject;
+    [SerializeField] private Vector3 _airBubblePosition;
+
     public bool IsDiving
     {
         get => _isDiving;
@@ -38,6 +41,8 @@ public class PlayerBehavior : MonoBehaviour
     void Awake() 
     {
         _animator = GetComponent<Animator>();    
+        _airBubbleObject = GameObject.Find("AirBubble");
+        _airBubblePosition = _airBubbleObject.transform.localPosition;
     }
     void Start()
     {
@@ -82,12 +87,18 @@ public class PlayerBehavior : MonoBehaviour
             swimDirection += Vector2.right;
             if(_sr.flipX){
                 _sr.flipX = false;
+                _airBubbleObject.transform.localPosition = new Vector3(-_airBubblePosition.x ,
+                _airBubblePosition.y,
+                _airBubblePosition.z);
                 SwapCollectionAuraPosition();
             }
         } else if (Input.GetKey(KeyCode.A)){
             swimDirection += Vector2.left;
             if(!_sr.flipX){
                 _sr.flipX = true;
+                _airBubbleObject.transform.localPosition = new Vector3(_airBubblePosition.x ,
+                _airBubblePosition.y,
+                _airBubblePosition.z);
                 SwapCollectionAuraPosition();
             }
         }
