@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.Events;
 
+[System.Serializable]
+public class OnGetUrchinEvent : UnityEvent<int>
+{
+}
+
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerBehavior : MonoBehaviour
 {
@@ -85,6 +90,10 @@ public class PlayerBehavior : MonoBehaviour
                 _sr.flipX = true;
                 SwapCollectionAuraPosition();
             }
+        }
+        else if (Input.GetKey(KeyCode.Tab))
+        {
+            GetUrchin();
         }
     }
 
