@@ -6,7 +6,7 @@ public class UrchinSpawner : MonoBehaviour
 {
     int xMax = 42;
     int xMin = -4;
-    int y = 2;
+    int y = 0;
 
     [SerializeField] uint numberofUrchins = 60;
 
@@ -25,6 +25,8 @@ public class UrchinSpawner : MonoBehaviour
             Instantiate(urchin, new Vector3(x,y,0), Quaternion.identity);
         }
     }
+
+
 
     public void DeleteAllUrchins()
     {
