@@ -25,4 +25,13 @@ public class UrchinSpawner : MonoBehaviour
             Instantiate(urchin, new Vector3(x,y,0), Quaternion.identity);
         }
     }
+
+    public void DeleteAllUrchins()
+    {
+        var urchins = GameObject.FindGameObjectsWithTag("Urchin");
+        foreach (var urchin in urchins)
+        {
+            Destroy(urchin);
+        }
+    }
 }

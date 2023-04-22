@@ -98,4 +98,9 @@ public class PlayerBehavior : MonoBehaviour
         var pos = _urchinCollectionAura.transform.localPosition;
         _urchinCollectionAura.transform.localPosition = new Vector3(-pos.x,pos.y,pos.z);
     }
+
+    public void ResetUrchinCount()
+    {
+        NumberOfUrchinsOnPlayer = 0;
+    }
 }

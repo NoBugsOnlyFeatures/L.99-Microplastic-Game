@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEditor;
 using UnityEngine.Assertions.Comparers;
 using Mono.Cecil.Cil;
+using System;
 
 public enum OxygenLevel
 {
@@ -16,9 +17,11 @@ public enum OxygenLevel
 
 public class OxygenManager : MonoBehaviour
 {
+    public static Action OnOxygenEmpty;
     [SerializeField] private Slider _oxygenBar;
     [SerializeField] private Gradient _oxygenGradient;
     [SerializeField] private Image _oxygenBarForeground;
+    [SerializeField] private float _breathingGameLength = 60.0f;
     /* [SerializeField] private readonly float _totalOxygen = 50.0f;
     [SerializeField] private float _currentOxygen = 50.0f;
     [SerializeField] private float _depletionRate = 0.1f; // rate we deplete oxygen at
@@ -45,12 +48,10 @@ public class OxygenManager : MonoBehaviour
     private float _currentOxygenTankInSeconds = 0.0f;
 
     [SerializeField]
-    private const float OXYGEN_DEPLETION_RATE_PER_SECOND = 0.1f;
+    private const float OXYGEN_DEPLETION_RATE_PER_SECOND = 0.01f;
 
     [SerializeField]
-    private const float OXYGEN_DEPLETION_TIME = 3.0f;
-
-    private float _timingBonus, _timingPenalty;
+    private const float OXYGEN_DEPLETION_TIME = 1.0f;
 
     private OxygenLevel _currentOxygenLevel;
 
@@ -80,9 +81,9 @@ public class OxygenManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _currentOxygenLevel = OxygenLevel.TEST;
+        _currentOxygenLevel = OxygenLevel.DAY1;
         SetOxygenLevelForLevel();
-        FillOxygenBarByPercent(/* percent */ 0.00000001f);
+        FillOxygenBarByPercent(/* percent */ 0.01f);
     }
 
     // Update is called once per frame
@@ -90,10 +91,11 @@ public class OxygenManager : MonoBehaviour
     {
         _isAlive = _currentOxygenTankInSeconds > 0;
 
-        /*if (!_isAlive)
+        if (!_isAlive && _isUnderWater)
         {
-            EditorApplication.isPlaying = false;
-        }*/
+            // EditorApplication.isPlaying = false;
+            OnOxygenEmpty?.Invoke();
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && _isUnderWater)
         { 
@@ -110,7 +112,7 @@ public class OxygenManager : MonoBehaviour
 
     public void AddOxygenBySec(float fillSeconds)
     {
-        _currentOxygenTankInSeconds += fillSeconds;
+        _currentOxygenTankInSeconds += 15.0f * fillSeconds;
         if (_currentOxygenTankInSeconds >= _currentLevelOxygenMaxInSeconds)
         {
             _currentOxygenTankInSeconds = _currentLevelOxygenMaxInSeconds;

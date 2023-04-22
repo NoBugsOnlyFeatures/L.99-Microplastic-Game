@@ -13,6 +13,8 @@ public class MainGameManager : MonoBehaviour
     private UrchinSpawner _urchinSpawner;
     private OxygenManager _oxygenManager;
 
+    private Vector3 _initialDiverPosition;
+
     void Awake()
     {
         if (Instance != null)
@@ -25,6 +27,8 @@ public class MainGameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         _diverGameObject = GameObject.Find("Diver");
+        _initialDiverPosition = _diverGameObject.transform.position;
+
         _player = _diverGameObject.GetComponent<PlayerBehavior>();
         _oxygenManager = GameObject.Find("OxygenBar").GetComponent<OxygenManager>();
 
@@ -45,6 +49,7 @@ public class MainGameManager : MonoBehaviour
 
     public void StartGame()
     {
+        _diverGameObject.transform.position = _initialDiverPosition;
         _diverGameObject.SetActive(true);
     }
 
@@ -53,5 +58,16 @@ public class MainGameManager : MonoBehaviour
         _urchinSpawner.SpawnUrchins();
         _player.IsDiving = true;
         _oxygenManager.IsUnderWater = _player.IsDiving;
+    }
+
+    public void ResetGame()
+    {
+        _diverGameObject.SetActive(false);
+
+        _player.ResetUrchinCount();
+        _player.IsDiving = false;
+        _oxygenManager.IsUnderWater = false;
+
+        _urchinSpawner.DeleteAllUrchins();
     }
 }
