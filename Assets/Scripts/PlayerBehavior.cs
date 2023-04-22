@@ -15,7 +15,7 @@ public class PlayerBehavior : MonoBehaviour
     bool isRightFacing; 
     Vector2 swimDirection;
     public uint NumberOfUrchinsOnPlayer {get; set;}
-    UnityEvent<PlayerBehavior> OnGetUrchin;
+    public UnityEvent<PlayerBehavior> OnGetUrchin;
 
     GameObject _urchinCollectionAura;
     
