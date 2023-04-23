@@ -21,6 +21,7 @@ public class PlayerBehavior : MonoBehaviour
     Vector2 swimDirection;
     public uint NumberOfUrchinsOnPlayer {get; set;}
     public UnityEvent<PlayerBehavior> OnGetUrchin;
+    public UnityEvent OnCollectionFinished;
 
     GameObject _urchinCollectionAura;
     
@@ -110,7 +111,6 @@ public class PlayerBehavior : MonoBehaviour
 
     public void GetUrchin(){
         NumberOfUrchinsOnPlayer += 1;
-        Debug.Log("OnGetUrchin event"+OnGetUrchin);
         OnGetUrchin.Invoke(this);
     }
 

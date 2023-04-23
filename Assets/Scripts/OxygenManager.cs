@@ -128,6 +128,17 @@ public class OxygenManager : MonoBehaviour
         _initialized = true;
     }
 
+    public void ResetOxygen()
+    {
+        _initialized = false;
+        _hitBubbleRange = false;
+        _countdownStarted = false;
+        _isAlive = true;
+
+        _currentOxygenTankInSeconds = 0.0f;
+        _currentTimerFillInSeconds = 0.0f;
+    }
+
     private void UpdateOxygenBar()
     {
         var fillAmount = (_currentLevelOxygenMaxInSeconds - (_currentLevelOxygenMaxInSeconds - _currentOxygenTankInSeconds)) / _currentLevelOxygenMaxInSeconds;

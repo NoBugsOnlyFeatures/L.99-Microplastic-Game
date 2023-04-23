@@ -14,6 +14,9 @@ public class MainGameManager : MonoBehaviour
     private OxygenManager _oxygenManager;
 
     private Vector3 _initialDiverPosition;
+    private UIManager _uiManager;
+    private AudioSource _audioSource;
+
 
     void Awake()
     {
@@ -33,12 +36,16 @@ public class MainGameManager : MonoBehaviour
         _oxygenManager = GameObject.Find("OxygenBar").GetComponent<OxygenManager>();
 
         _urchinSpawner = GameObject.Find("UrchinSpawner").GetComponent<UrchinSpawner>();
+        _uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         _diverGameObject.SetActive(false);
+        _audioSource.Play();
     }
 
     // Update is called once per frame
@@ -71,5 +78,13 @@ public class MainGameManager : MonoBehaviour
         _oxygenManager.IsUnderWater = false;
 
         _urchinSpawner.DeleteAllUrchins();
+    }
+
+    public void OnPlayerCollectUrchin(PlayerBehavior player)
+    {
+        if (player.NumberOfUrchinsOnPlayer >= _urchinSpawner.GetSpwanedUrchinCount())
+        {
+            _uiManager.HandlePlayerWin();
+        }
     }
 }
