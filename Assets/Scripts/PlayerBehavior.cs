@@ -24,7 +24,7 @@ public class PlayerBehavior : MonoBehaviour
 
     GameObject _urchinCollectionAura;
     
-
+    
     private Animator _animator;
     private bool _isDiving = false;
 

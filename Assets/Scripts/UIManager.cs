@@ -9,6 +9,9 @@ public class UIManager : MonoBehaviour
     private MainGameManager _gameManager;
     private GameObject _titleScreenUI, _titleScreenButtonUI;
     private GameObject _gameOverPanel;
+    private AudioSource _audio;
+
+    private AudioClip _stamp;
 
     private GameObject _startButtonGameObject, _testRunGameObject, _quitGameObject;
     private Button _startButton, _testRunButton, _titleQuitButton;
@@ -59,6 +62,7 @@ public class UIManager : MonoBehaviour
         _countDownTimerGameObject = GameObject.Find("BreathingGameCountdownTimer");
         _breathingCountDownImage = _countDownTimerGameObject.GetComponent<Image>();
 
+        _audio = GetComponent<AudioSource>();
 
         // Set Urchin Related UI
         _urchinCounterGameObject = GameObject.Find("UrchinCounter");
@@ -184,6 +188,7 @@ public class UIManager : MonoBehaviour
 
     private void OnQuitButtonClicked()
     {
+        _audio.PlayOneShot();
         Application.Quit();
     }
 

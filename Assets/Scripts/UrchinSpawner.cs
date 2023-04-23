@@ -32,8 +32,6 @@ public class UrchinSpawner : MonoBehaviour
         }
     }
 
-
-
     public void DeleteAllUrchins()
     {
         var urchins = GameObject.FindGameObjectsWithTag("Urchin");
