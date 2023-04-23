@@ -46,11 +46,13 @@ public class BubbleManager : MonoBehaviour
         UpdateSprite();
         
         _inRange = _spriteIndex >= _bubbleSprites.Length - 1;
-        _renderer.color = _inRange ? Color.cyan : Color.white;
+        //_renderer.color = _inRange ? Color.cyan : Color.white;
+        
         // if (_inRange){
         //     _audio.PlayOneShot(_bubbleSounds[_audioRotation%_bubbleSounds.Length]);
         //     _audioRotation += 1;
         // }
+
     }
 
     public bool IsInRange()

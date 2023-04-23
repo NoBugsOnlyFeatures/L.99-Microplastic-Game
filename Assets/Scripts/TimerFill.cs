@@ -13,10 +13,10 @@ public class TimerFill : MonoBehaviour
     [SerializeField]
     private TimerCircleTick _tick;
 
-    private float _perfectMinAngle = 89.8f; 
-    private float _perfectMaxAngle = 118.2f;
+    private float _perfectMinAngle = 65f; 
+    private float _perfectMaxAngle = 115f;
     
-    private float _exitMaxAngle = 270.0f;
+    private float _exitMaxAngle = 288.0f;
     private float _exitMinAngle = 255f;
     
     [SerializeField] private bool _isHoldingSpace, _canAddToFill, _hitFillBonus = false;
@@ -31,7 +31,7 @@ public class TimerFill : MonoBehaviour
     private const float PERFECT_TIMING_BONUS = 0.1f;
 
     [SerializeField]
-    private const float INCORRECT_RELEASE_PENALTY = 0.03f;
+    private const float INCORRECT_RELEASE_PENALTY = 0.5f;
 
     [SerializeField]
     private OxygenManager _oxygenManager;
@@ -79,7 +79,7 @@ public class TimerFill : MonoBehaviour
                 if (playerAngle > _exitMinAngle)
                 {
                     // _fillBySecond *= 0.5f;
-                    _fillBySecond -= INCORRECT_RELEASE_PENALTY;
+                    _fillBySecond += (INCORRECT_RELEASE_PENALTY * _fillBySecond);
                 }
 
                 if (_canAddToFill)

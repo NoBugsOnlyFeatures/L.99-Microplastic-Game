@@ -28,7 +28,6 @@ public class UIManager : MonoBehaviour
 
     private float _currentBreathingTime = 0.0f;
     [SerializeField] private float _breathingGameLength = 60.0f;
-    [SerializeField] private Gradient _countDownGradient;
 
     private bool _isBreathingGameActive = false;
     public bool IsBreathingGameActive => _isBreathingGameActive;
@@ -164,7 +163,6 @@ public class UIManager : MonoBehaviour
     {
         var fillAmount = (_breathingGameLength - _currentBreathingTime) / _breathingGameLength;
         _breathingCountDownImage.fillAmount = fillAmount;
-        _breathingCountDownImage.color = _countDownGradient.Evaluate(fillAmount);
     }
 
     private void HandleOxygenDepleted()
