@@ -39992,7 +39992,7 @@ Tilemap:
       - {fileID: -1308224771, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
       - {fileID: -150767333, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
       - {fileID: 1870694899, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -2, y: -2, z: 0}
@@ -40015,7 +40015,7 @@ Tilemap:
       - {fileID: -1308224771, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
       - {fileID: -150767333, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
       - {fileID: 1870694899, guid: bc9851b5117d21041953dadff1debaa8, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 27, y: -2, z: 0}
@@ -46337,8 +46337,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651438846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2845, y: -0.1826, z: 0}
-  m_LocalScale: {x: 0.46299472, y: 0.3310837, z: 1}
+  m_LocalPosition: {x: -0.2117, y: -0.1098, z: 0}
+  m_LocalScale: {x: 0.6086066, y: 0.4766943, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 706397867}
@@ -47806,7 +47806,7 @@ Tilemap:
       - {fileID: 764876018, guid: 6f70833e7e307924ba0aa9f194c122c9, type: 3}
       - {fileID: -2122038113, guid: 6f70833e7e307924ba0aa9f194c122c9, type: 3}
       - {fileID: 643599524, guid: 6f70833e7e307924ba0aa9f194c122c9, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 46, y: 3, z: 0}
@@ -47846,7 +47846,7 @@ Tilemap:
       - {fileID: 764876018, guid: 6f70833e7e307924ba0aa9f194c122c9, type: 3}
       - {fileID: -2122038113, guid: 6f70833e7e307924ba0aa9f194c122c9, type: 3}
       - {fileID: 643599524, guid: 6f70833e7e307924ba0aa9f194c122c9, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 58, y: 3, z: 0}
@@ -48008,9 +48008,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f8146776f9871bb4abe2e8563cd99477, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.884
+  m_Volume: 0.311
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -50863,6 +50863,8 @@ MonoBehaviour:
   _breathingGameLength: 60
   _miniGameFillFactor: 6
   _currentBubble: {fileID: 0}
+  TEST_FULL_OXYGEN_IN_MINUTES: 1
+  DAY1_FULL_OXYGEN_IN_MINUTES: 2.5
   _currentOxygenTankInSeconds: 0
   _currentTimerFillInSeconds: 0
 --- !u!114 &8508293224528271928
