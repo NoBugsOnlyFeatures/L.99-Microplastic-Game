@@ -10,10 +10,7 @@ public class BubbleManager : MonoBehaviour
     [SerializeField]
     private Sprite[] _bubbleSprites;
 
-    [SerializeField]
-    private AudioClip[] _bubbleSounds;
-    private AudioSource _audio;
-    private int _audioRotation = 0;
+
 
     [SerializeField]
     private float _period = 1.0f; // five seconds for a full cycle of small to large
@@ -30,15 +27,9 @@ public class BubbleManager : MonoBehaviour
     [SerializeField]
     private const float BAD_TIMINING_PENALTY = -0.25f;
 
-    void Awake(){
-        _audio = GetComponent<AudioSource>(); 
-    }
-
     void Start()
     {
         _spriteTimer = (_period / (_bubbleSprites.Length - 1));
-        
-        _audioRotation = 0;
     }
 
     void Update()
@@ -47,11 +38,6 @@ public class BubbleManager : MonoBehaviour
         
         _inRange = _spriteIndex >= _bubbleSprites.Length - 1;
         //_renderer.color = _inRange ? Color.cyan : Color.white;
-        
-        // if (_inRange){
-        //     _audio.PlayOneShot(_bubbleSounds[_audioRotation%_bubbleSounds.Length]);
-        //     _audioRotation += 1;
-        // }
 
     }
 

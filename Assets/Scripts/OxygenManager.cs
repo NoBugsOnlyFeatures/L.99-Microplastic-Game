@@ -30,6 +30,11 @@ public class OxygenManager : MonoBehaviour
     private bool _hitBubbleRange = false;
     [SerializeField] private BubbleManager _currentBubble;
 
+    [SerializeField]
+    private AudioClip[] _bubbleSounds;
+    private AudioSource _audio;
+    private int _audioRotation = 0;
+
 
     [SerializeField]
     private float TEST_FULL_OXYGEN_IN_MINUTES = 1.0f;
@@ -76,6 +81,7 @@ public class OxygenManager : MonoBehaviour
     void Awake()
     {
         _currentBubble = GameObject.Find("AirBubble").GetComponent<BubbleManager>();
+        _audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -95,6 +101,11 @@ public class OxygenManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && _isUnderWater)
             { 
                 _hitBubbleRange = _currentBubble.IsInRange();
+
+                if(_hitBubbleRange){
+                    _audio.PlayOneShot(_bubbleSounds[_audioRotation % _bubbleSounds.Length]);
+                    _audioRotation += 1;
+                }
             }
         }
     }
