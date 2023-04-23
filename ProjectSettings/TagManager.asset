@@ -69,3 +69,6 @@ TagManager:
   - name: Coral
     uniqueID: 1832255057
     locked: 0
+  - name: Clouds
+    uniqueID: 1225062103
+    locked: 0
