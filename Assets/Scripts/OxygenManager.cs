@@ -24,15 +24,10 @@ public class OxygenManager : MonoBehaviour
     [SerializeField] private float _breathingGameLength = 60.0f;
     [SerializeField] private int _miniGameFillFactor = 6; 
     private float _breathingMaxFill;
-    /* [SerializeField] private readonly float _totalOxygen = 50.0f;
-    [SerializeField] private float _currentOxygen = 50.0f;
-    [SerializeField] private float _depletionRate = 0.1f; // rate we deplete oxygen at
-    [SerializeField] private float _oxygeDepletionTime = 5.0f; // how often we decrease oxygen*/
 
     private bool _isAlive = true;
     private bool _countdownStarted = false;
     private bool _hitBubbleRange = false;
-    // [SerializeField] private bool _isBubbleInRange = false;
     [SerializeField] private BubbleManager _currentBubble;
 
 
@@ -83,12 +78,6 @@ public class OxygenManager : MonoBehaviour
         _currentBubble = GameObject.Find("AirBubble").GetComponent<BubbleManager>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -105,16 +94,7 @@ public class OxygenManager : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space) && _isUnderWater)
             { 
-                /* var deltaOxygen = _currentBubble.IsInRange() ? 5.0f : -5.0f;
-                Debug.Log(_currentBubble.IsInRange() ? "Gained Oxygen!" : "Lost Oxygen");
-                _currentOxygen += deltaOxygen;
-                _currentOxygen = Mathf.Clamp(_currentOxygen, 0, _totalOxygen);
-                UpdateOxygenBar(); */
-
                 _hitBubbleRange = _currentBubble.IsInRange();
-
-                // var deltaOxygen = _currentBubble.IsInRange()
-                // AddOxygenBySec(deltaOxygen);
             }
         }
     }
@@ -127,8 +107,6 @@ public class OxygenManager : MonoBehaviour
             _currentTimerFillInSeconds = _breathingMaxFill;
         }
 
-        Debug.Log("Current Timer Fill in Seconds: " + _currentTimerFillInSeconds);
-
         _currentOxygenTankInSeconds +=  (_currentLevelOxygenMaxInSeconds / _breathingMaxFill) * _currentTimerFillInSeconds ;
         if (_currentOxygenTankInSeconds >= _currentLevelOxygenMaxInSeconds)
         {
@@ -138,8 +116,6 @@ public class OxygenManager : MonoBehaviour
         {
             _currentOxygenTankInSeconds = 0.0f;
         }
-
-        Debug.Log("Current Oxygen in Seconds: " + _currentOxygenTankInSeconds);
 
         UpdateOxygenBar();
     }
@@ -154,10 +130,6 @@ public class OxygenManager : MonoBehaviour
 
     private void UpdateOxygenBar()
     {
-        /*var fillAmount = (_totalOxygen - (_totalOxygen - _currentOxygen)) / _totalOxygen;
-        _oxygenBar.value = fillAmount;
-        _oxygenBarForeground.color = _oxygenGradient.Evaluate(fillAmount);*/
-
         var fillAmount = (_currentLevelOxygenMaxInSeconds - (_currentLevelOxygenMaxInSeconds - _currentOxygenTankInSeconds)) / _currentLevelOxygenMaxInSeconds;
         _oxygenBar.value = fillAmount;
         _oxygenBarForeground.color = _oxygenGradient.Evaluate(fillAmount);
@@ -177,10 +149,6 @@ public class OxygenManager : MonoBehaviour
     {
         if (_countdownStarted)
         {
-            /* _currentOxygen -= (_totalOxygen * _depletionRate);
-            UpdateOxygenBar(); */
-
-            // _currentOxygenTankInSeconds -= _currentLevelOxygenMaxInSeconds * OXYGEN_DEPLETION_RATE_PER_SECOND;
             if (!_hitBubbleRange)
             {
                 _currentOxygenTankInSeconds -= 1;
@@ -201,8 +169,6 @@ public class OxygenManager : MonoBehaviour
         };
 
         _breathingMaxFill = _currentLevelOxygenMaxInSeconds / _miniGameFillFactor;
-         Debug.Log("Max Oxygen In Seconds: " + _currentLevelOxygenMaxInSeconds);
-         Debug.Log("Max breathing fill: " + _breathingMaxFill);
     }
 
     private void FillOxygenBarByPercent(float percent)
