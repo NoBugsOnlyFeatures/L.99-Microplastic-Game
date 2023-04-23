@@ -14,7 +14,7 @@ public class PlayerBehavior : MonoBehaviour
 {
     [SerializeField] float underWaterDrag = 2f;
     [SerializeField] float underwaterAngularDrag = 1f;
-    [SerializeField] float swimForce = 300f;
+    [SerializeField] float swimForce = 150f;
     Rigidbody2D _rb;
     SpriteRenderer _sr;
     bool isRightFacing; 
@@ -112,6 +112,13 @@ public class PlayerBehavior : MonoBehaviour
     public void GetUrchin(){
         NumberOfUrchinsOnPlayer += 1;
         OnGetUrchin.Invoke(this);
+    }
+
+    public void StartDiving()
+    {
+        _animator.SetTrigger("Diving");
+        IsDiving = true;
+        _animator.SetBool("IsUnderwater", true);
     }
 
     private void SwapCollectionAuraPosition(){
