@@ -30,6 +30,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private float _breathingGameLength = 60.0f;
 
     private bool _isBreathingGameActive = false;
+
+    private TMP_Text _gameOverText;
     public bool IsBreathingGameActive => _isBreathingGameActive;
     void Awake()
     {
@@ -48,6 +50,7 @@ public class UIManager : MonoBehaviour
         _testRunButton = _testRunGameObject.GetComponent<Button>();
         _titleQuitButton = _quitGameObject.GetComponent<Button>();
 
+        _gameOverText = _gameOverPanel.transform.GetChild(1).gameObject.GetComponent<TMP_Text>();
         _retryButton = _gameOverPanel.transform.GetChild(2).gameObject.GetComponent<Button>();
         _gameOverQuitButton = _gameOverPanel.transform.GetChild(3).gameObject.GetComponent<Button>();
 
@@ -126,6 +129,11 @@ public class UIManager : MonoBehaviour
         _oxygenGaugeGameObject.SetActive(isEnabled);
     }
 
+    public void HandlePlayerWin()
+    {
+        ResetUI(/* isGameOver */ false);
+    }
+
     void OnStartButtonClicked(bool isTestRun)
     {
         _audio.PlayOneShot(_stampSound);
@@ -167,10 +175,10 @@ public class UIManager : MonoBehaviour
 
     private void HandleOxygenDepleted()
     {
-        ResetUI();
+        ResetUI(/* isGameOver */ true);
     }
 
-    private void ResetUI()
+    private void ResetUI(bool isGameOver)
     {
         _oxygenCanvasGameObject.SetActive(false);
         _urchinCounterGameObject.SetActive(false);
@@ -184,6 +192,7 @@ public class UIManager : MonoBehaviour
 
         urchinText.text = "0";
 
+        _gameOverText.text = isGameOver ? "Game Over" : "You Win!";
         _gameOverPanel.SetActive(true);
     }
 

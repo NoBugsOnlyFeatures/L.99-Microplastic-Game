@@ -10,7 +10,6 @@ public class UrchinCounterManager : MonoBehaviour
 {
     [SerializeField]
     private Sprite[] _urchinCounterSprites;
-    private Sprite _currentSpirte;
 
     [SerializeField]
     private int _maxUrchinCount = 60;
@@ -43,7 +42,6 @@ public class UrchinCounterManager : MonoBehaviour
     private Sprite GetSpriteByUrchinCount(int urchinCount)
     {
         var index = Mathf.FloorToInt(urchinCount / _updateInterval);
-        Debug.Log("Urchin sprite index: " + index);
         if (index >= _urchinCounterSprites.Length - 1)
         {
             index = _urchinCounterSprites.Length - 1;

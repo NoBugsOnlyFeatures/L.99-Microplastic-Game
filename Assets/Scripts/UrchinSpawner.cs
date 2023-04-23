@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UrchinSpawner : MonoBehaviour
@@ -39,5 +41,10 @@ public class UrchinSpawner : MonoBehaviour
         {
             Destroy(urchin);
         }
+    }
+
+    public int GetSpwanedUrchinCount()
+    {
+        return (int)numberofUrchins;
     }
 }
