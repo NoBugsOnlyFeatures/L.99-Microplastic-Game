@@ -34,7 +34,7 @@ public class BubbleManager : MonoBehaviour
         UpdateSprite();
         
         _inRange = _spriteIndex >= _bubbleSprites.Length - 1;
-        _renderer.color = _inRange ? Color.cyan : Color.white;
+        // _renderer.color = _inRange ? Color.cyan : Color.white;
     }
 
     public bool IsInRange()
