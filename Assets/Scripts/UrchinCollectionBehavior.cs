@@ -5,6 +5,13 @@ using UnityEngine;
 public class UrchinCollectionBehavior : MonoBehaviour
 {
     [SerializeField] PlayerBehavior _player;
+    [SerializeField] AudioClip[] _scrape;
+    private int _audioRotation = 0;
+    AudioSource _audio;
+
+    void Awake(){
+        _audio = GetComponent<AudioSource>(); 
+    }
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -13,8 +20,8 @@ public class UrchinCollectionBehavior : MonoBehaviour
             // Display E over the top of urchin
             // Check for down key
             if (Input.GetKey(KeyCode.E)){
-                Debug.Log("Interacting with Urchin");
-                Debug.Log("player in urchincollection event" + _player);
+                _audio.PlayOneShot(_scrape[_audioRotation%_scrape.Length]);
+                _audioRotation += 1;
                 _player.GetUrchin();
                 Destroy(other.gameObject);
             }
