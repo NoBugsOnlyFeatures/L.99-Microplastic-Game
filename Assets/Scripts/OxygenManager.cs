@@ -31,7 +31,7 @@ public class OxygenManager : MonoBehaviour
     [SerializeField] private BubbleManager _currentBubble;
 
     [SerializeField]
-    private AudioClip[] _bubbleSounds;
+    private AudioClip _bubbleSounds;
     private AudioSource _audio;
     private int _audioRotation = 0;
 
@@ -103,7 +103,7 @@ public class OxygenManager : MonoBehaviour
                 _hitBubbleRange = _currentBubble.IsInRange();
 
                 if(_hitBubbleRange){
-                    _audio.PlayOneShot(_bubbleSounds[_audioRotation % _bubbleSounds.Length]);
+                    _audio.PlayOneShot(_bubbleSounds);
                     _audioRotation += 1;
                 }
             }
