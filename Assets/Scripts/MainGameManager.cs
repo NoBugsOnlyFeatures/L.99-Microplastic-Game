@@ -16,6 +16,7 @@ public class MainGameManager : MonoBehaviour
     private Vector3 _initialDiverPosition;
     private UIManager _uiManager;
     private AudioSource _audioSource;
+    private CameraManager _cameraManager;
 
 
     void Awake()
@@ -39,6 +40,7 @@ public class MainGameManager : MonoBehaviour
         _uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
 
         _audioSource = GetComponent<AudioSource>();
+        _cameraManager = Camera.main.gameObject.GetComponent<CameraManager>();
     }
 
     // Start is called before the first frame update
@@ -59,13 +61,14 @@ public class MainGameManager : MonoBehaviour
         _diverGameObject.transform.position = _initialDiverPosition;
         _diverGameObject.SetActive(true);
 
+        _cameraManager.GameStarted = true;
         _oxygenManager.SetOxygenLimit(isTestRun);
     }
 
     public void BeginDive()
     {
+        _player.StartDiving();
         _urchinSpawner.SpawnUrchins();
-        _player.IsDiving = true;
         _oxygenManager.IsUnderWater = _player.IsDiving;
     }
 

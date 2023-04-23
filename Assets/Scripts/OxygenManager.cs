@@ -22,7 +22,7 @@ public class OxygenManager : MonoBehaviour
     [SerializeField] private Gradient _oxygenGradient;
     [SerializeField] private Image _oxygenBarForeground;
     [SerializeField] private float _breathingGameLength = 60.0f;
-    [SerializeField] private int _miniGameFillFactor = 6; 
+    [SerializeField] private int _miniGameFillFactor = 5; 
     private float _breathingMaxFill;
 
     private bool _isAlive = true;
@@ -31,7 +31,7 @@ public class OxygenManager : MonoBehaviour
     [SerializeField] private BubbleManager _currentBubble;
 
     [SerializeField]
-    private AudioClip[] _bubbleSounds;
+    private AudioClip _bubbleSounds;
     private AudioSource _audio;
     private int _audioRotation = 0;
 
@@ -40,7 +40,7 @@ public class OxygenManager : MonoBehaviour
     private float TEST_FULL_OXYGEN_IN_MINUTES = 1.0f;
 
     [SerializeField]
-    private float DAY1_FULL_OXYGEN_IN_MINUTES = 2.5f;
+    private float DAY1_FULL_OXYGEN_IN_MINUTES = 1.5f;
 
     [SerializeField]
     private const float DAY2_FULL_OXYGEN_IN_MINUTES = 3.0f;
@@ -103,7 +103,7 @@ public class OxygenManager : MonoBehaviour
                 _hitBubbleRange = _currentBubble.IsInRange();
 
                 if(_hitBubbleRange){
-                    _audio.PlayOneShot(_bubbleSounds[_audioRotation % _bubbleSounds.Length]);
+                    _audio.PlayOneShot(_bubbleSounds);
                     _audioRotation += 1;
                 }
             }

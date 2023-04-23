@@ -5,6 +5,13 @@ using UnityEngine;
 public class CameraManager : MonoBehaviour
 {
     public GameObject player;
+    public bool GameStarted { get; set;}
+    private Vector3 _initalPosition;
+
+    void Awake()
+    {
+        _initalPosition = transform.position;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +21,9 @@ public class CameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = player.transform.position + new Vector3(0,0,-10);
+        if (GameStarted)
+        {
+            transform.position = player.transform.position + new Vector3(0,0,-10);
+        }
     }
 }
