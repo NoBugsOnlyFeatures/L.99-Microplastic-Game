@@ -9,9 +9,9 @@ public class UIManager : MonoBehaviour
     private MainGameManager _gameManager;
     private GameObject _titleScreenUI, _titleScreenButtonUI;
     private GameObject _gameOverPanel;
-    private AudioSource _audio;
 
-    private AudioClip _stamp;
+    private AudioSource _audio;
+    [SerializeField] private AudioClip _stampSound;
 
     private GameObject _startButtonGameObject, _testRunGameObject, _quitGameObject;
     private Button _startButton, _testRunButton, _titleQuitButton;
@@ -62,6 +62,7 @@ public class UIManager : MonoBehaviour
         _countDownTimerGameObject = GameObject.Find("BreathingGameCountdownTimer");
         _breathingCountDownImage = _countDownTimerGameObject.GetComponent<Image>();
 
+        // Set Audio
         _audio = GetComponent<AudioSource>();
 
         // Set Urchin Related UI
@@ -70,6 +71,7 @@ public class UIManager : MonoBehaviour
     }
     void Start()
     {
+        
         _startButton.onClick.AddListener(() => OnStartButtonClicked(/* isTestRun */ false));
         _titleQuitButton.onClick.AddListener(OnQuitButtonClicked);
         _testRunButton.onClick.AddListener(() => OnStartButtonClicked(/* isTestRun */ true));
@@ -127,6 +129,7 @@ public class UIManager : MonoBehaviour
 
     void OnStartButtonClicked(bool isTestRun)
     {
+        _audio.PlayOneShot(_stampSound);
         _titleScreenUI.SetActive(false);
 
         EnableBreathingMinigame();
@@ -188,12 +191,13 @@ public class UIManager : MonoBehaviour
 
     private void OnQuitButtonClicked()
     {
-        _audio.PlayOneShot();
+        _audio.PlayOneShot(_stampSound);
         Application.Quit();
     }
 
     private void OnRetryButtonClicked()
     {
+        _audio.PlayOneShot(_stampSound);
         _gameOverPanel.SetActive(false);
 
         OnStartButtonClicked(/*isTestRun */ false);

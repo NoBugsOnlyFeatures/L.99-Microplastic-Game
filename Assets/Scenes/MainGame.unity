@@ -9364,6 +9364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076d8e7c8141a35458f3a7e3dd47f3c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stampSound: {fileID: 0}
   _breathingGameLength: 10
   _countDownGradient:
     serializedVersion: 2
@@ -46173,7 +46174,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.24
   m_Pitch: 1
   Loop: 0
@@ -47704,6 +47705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 076d8e7c8141a35458f3a7e3dd47f3c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stampSound: {fileID: 8300000, guid: f8146776f9871bb4abe2e8563cd99477, type: 3}
   _breathingGameLength: 10
   _countDownGradient:
     serializedVersion: 2
@@ -47759,9 +47761,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0.277
+  m_audioClip: {fileID: 8300000, guid: f8146776f9871bb4abe2e8563cd99477, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.884
   m_Pitch: 1
   Loop: 0
   Mute: 0
