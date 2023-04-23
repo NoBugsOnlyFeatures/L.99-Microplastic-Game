@@ -32,10 +32,10 @@ public class OxygenManager : MonoBehaviour
 
 
     [SerializeField]
-    private const float TEST_FULL_OXYGEN_IN_MINUTES = 1.0f;
+    private float TEST_FULL_OXYGEN_IN_MINUTES = 1.0f;
 
     [SerializeField]
-    private const float DAY1_FULL_OXYGEN_IN_MINUTES = 2.5f;
+    private float DAY1_FULL_OXYGEN_IN_MINUTES = 2.5f;
 
     [SerializeField]
     private const float DAY2_FULL_OXYGEN_IN_MINUTES = 3.0f;
