@@ -26,7 +26,7 @@ public class UrchinSpawner : MonoBehaviour
             var y = yStandard;
 
             //A stupid hack to get urchins to spawn below the screen
-            if(x >= 8.95f && x <= 19.36f){
+            if(x >= 8.95f && x <= 20.5f){
                 y = -2.76f;
             }
 
